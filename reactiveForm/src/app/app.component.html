@@ -1,0 +1,118 @@
+<div class="form">
+  <h2 id="registration">Electricity Bill Payment</h2>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+
+    <!-- biller -->
+    <div>
+      <label class="label" for="biller">Select Biller:</label>
+      <select id="biller"   formControlName="biller">   <!-- [ngModel]="defaultCountry"-->
+        <option value="mescom-nonrapdr">Mangalore ESCOM(Non-RAPDR)</option>
+        <option value="mescom-rapdr">Mangalore ESCOM(RAPDR)</option>
+        <option value="bescom">Bangalore ESCOM</option>
+        <option value="gescom">Gulbarga ESCOM</option>
+        <option value="hescom">Hubli ESCOM</option>
+      </select>
+    </div>
+
+
+    <div class="errorMessage" *ngIf="biller.errors?.['required'] && biller.touched" >
+      biller required
+    </div>
+
+<!-- location code -->
+    <div>
+      <label class="label" for="locationcode">Location Code</label>
+      <input type="number"  id="locationcode" placeholder="Enter locationcode" formControlName="locationcode" >
+    </div>
+  
+    <div class="errorMessage" *ngIf="locationcode.errors?.['required'] && locationcode.touched" >
+      locationcode required
+    </div>
+
+    <!-- RRno -->
+    <div>
+      <label class="label" for="rrno">RR Number</label>
+      <input type="text" id="rrno" placeholder="Enter the rr Number" formControlName="rrno">
+    </div>
+
+    <div class="errorMessage" *ngIf="rrno.errors?.['required'] && rrno.touched" >
+      rrno required
+    </div>
+
+    <!-- Name -->
+    <div>
+      <label class="label" for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" formControlName="name"> 
+    </div>
+
+    <div class="errorMessage" *ngIf="name.errors?.['required'] && name.touched" >
+      name required
+    </div>
+
+    <div class="errorMessage" *ngIf="name.errors?.['pattern'] && (name.touched||name.dirty)" >
+      name should be albhabets
+    </div>
+
+    <!--Email  -->
+    <div>
+      <label class="label" for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter the email" formControlName="email">
+    </div>
+
+    <div class="errorMessage" *ngIf="email.errors?.['required']&&(email.touched||email.dirty)" >
+      email required
+    </div>
+
+    <div class="errorMessage" *ngIf="email.errors?.['email']&& (email.touched||email.dirty)" >
+      email is invalid
+    </div>
+
+    <!-- Mobile number -->
+    <div>
+      <label class="label" for="mblno">Mobile Nunber</label>
+      <input type="text" id="mblno" placeholder="Enter your mobile number" formControlName="mblno"> 
+    </div>
+
+    <div class="errorMessage" *ngIf="mblno.errors?.['required']&& (mblno.touched||mblno.dirty)" >
+      mobile Number required
+    </div>
+
+    <div class="errorMessage" *ngIf="mblno.errors?.['pattern'] && (mblno.touched||mblno.dirty)" >
+      mobile Number invalid
+    </div>
+
+    <div class="errorMessage" *ngIf="mblno.errors?.['minlength'] && (mblno.touched||mblno.dirty)" >
+      mobile Number invalid
+    </div>
+
+    <div class="errorMessage" *ngIf="mblno.errors?.['maxlength'] && (mblno.touched||mblno.dirty)" >
+      mobile Number invalid
+    </div>
+
+    <!-- amount -->
+    <div>
+      <label class="label" for="amount">amount</label>
+      <input type="number" id="amount" placeholder="Enter the amount to be paid" formControlName="amount">
+    </div>
+
+    <div class="errorMessage" *ngIf="amount.errors?.['required'] && amount.touched" >
+      amount required
+    </div>
+
+    <!-- Payment Method -->
+    <div>
+     <label class="label" for="paymentMethod">Payment Method:</label>
+     <input type="radio" value="card" id="card" formControlName="paymentMethod">
+     <label for="card">Debit/Credit card</label>
+     <input type="radio" value="upi" id="upi" formControlName="paymentMethod">
+     <label for="upi">UPI</label>
+
+     <div class="errorMessage" *ngIf="paymentMethod.errors?.['required'] && paymentMethod.touched" >
+      paymentMethod required
+    </div>
+
+    </div>
+
+    <input type="submit" value="submit" id="btn">
+  </form>
+</div>
