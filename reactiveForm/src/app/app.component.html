@@ -5,7 +5,8 @@
     <!-- biller -->
     <div>
       <label class="label" for="biller">Select Biller:</label>
-      <select id="biller"   formControlName="biller">   <!-- [ngModel]="defaultCountry"-->
+      <select id="biller" formControlName="biller">
+        <!-- [ngModel]="defaultCountry"-->
         <option value="mescom-nonrapdr">Mangalore ESCOM(Non-RAPDR)</option>
         <option value="mescom-rapdr">Mangalore ESCOM(RAPDR)</option>
         <option value="bescom">Bangalore ESCOM</option>
@@ -14,20 +15,34 @@
       </select>
     </div>
 
+    <!-- using .ts get()
 
     <div class="errorMessage" *ngIf="biller.errors?.['required'] && biller.touched" >
       biller required
+    </div> 
+-->
+
+    <div class="errorMessage" *ngIf="reactiveForm.get('biller').errors?.['required'] && reactiveForm.get('biller').touched">
+      biller required
     </div>
 
-<!-- location code -->
+    <!-- location code -->
     <div>
       <label class="label" for="locationcode">Location Code</label>
-      <input type="number"  id="locationcode" placeholder="Enter locationcode" formControlName="locationcode" >
+      <input type="number" id="locationcode" placeholder="Enter locationcode" formControlName="locationcode">
     </div>
-  
-    <div class="errorMessage" *ngIf="locationcode.errors?.['required'] && locationcode.touched" >
+
+    <!-- using .ts get()
+      <div class="errorMessage" *ngIf="locationcode.errors?.['required'] && locationcode.touched" >
       locationcode required
+      </div> 
+    -->
+    <div class="errorMessage"
+      *ngIf="reactiveForm.get('locationcode').errors?.['required'] && (reactiveForm.get('locationcode').touched||reactiveForm.get('locationcode').dirty)">
+      locationcode Required
     </div>
+
+
 
     <!-- RRno -->
     <div>
@@ -35,83 +50,98 @@
       <input type="text" id="rrno" placeholder="Enter the rr Number" formControlName="rrno">
     </div>
 
-    <div class="errorMessage" *ngIf="rrno.errors?.['required'] && rrno.touched" >
-      rrno required
+    <div class="errorMessage"
+      *ngIf="reactiveForm.get('rrno').errors?.['required'] && (reactiveForm.get('rrno').touched||reactiveForm.get('rrno').dirty)">
+      rrno Required
     </div>
 
+
+    
+<div formGroupName="personalDetails">
     <!-- Name -->
-    <div>
-      <label class="label" for="name">Name</label>
-      <input type="text" id="name" placeholder="Enter your name" formControlName="name"> 
-    </div>
+<div>
+  <label class="label" for="name">Name</label>
+  <input type="text" id="name" placeholder="Enter your name" formControlName="name"> 
+  </div>
 
-    <div class="errorMessage" *ngIf="name.errors?.['required'] && name.touched" >
-      name required
-    </div>
 
-    <div class="errorMessage" *ngIf="name.errors?.['pattern'] && (name.touched||name.dirty)" >
-      name should be albhabets
+  <div class="errorMessage"
+      *ngIf="reactiveForm.get('personalDetails.name').errors?.['required'] && (reactiveForm.get('personalDetails.name').touched||reactiveForm.get('personalDetails.name').dirty)">
+      name Required
     </div>
+    <div class="errorMessage"
+    *ngIf="reactiveForm.get('personalDetails.name').errors?.['pattern'] && (reactiveForm.get('personalDetails.name').touched||reactiveForm.get('personalDetails.name').dirty)">
+    name should be alphabets
+  </div>
 
-    <!--Email  -->
-    <div>
-      <label class="label" for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter the email" formControlName="email">
-    </div>
 
-    <div class="errorMessage" *ngIf="email.errors?.['required']&&(email.touched||email.dirty)" >
-      email required
-    </div>
+<!--Email -->
+<div>
+  <label class="label" for="email">Email</label>
+  <input type="email" id="email" placeholder="Enter the email" formControlName="email">
+  </div>
 
-    <div class="errorMessage" *ngIf="email.errors?.['email']&& (email.touched||email.dirty)" >
-      email is invalid
-    </div>
+  <div class="errorMessage"
+  *ngIf="reactiveForm.get('personalDetails.email').errors?.['required'] && (reactiveForm.get('personalDetails.email').touched||reactiveForm.get('personalDetails.email').dirty)">
+  email Required
+</div>
+  
+<div class="errorMessage"
+  *ngIf="reactiveForm.get('personalDetails.email').errors?.['email'] && (reactiveForm.get('personalDetails.email').touched || reactiveForm.get('personalDetails.email').dirty)">
+  email is invalid
+</div>
 
-    <!-- Mobile number -->
-    <div>
-      <label class="label" for="mblno">Mobile Nunber</label>
-      <input type="text" id="mblno" placeholder="Enter your mobile number" formControlName="mblno"> 
-    </div>
+  <!-- Mobile number -->
+<div>
+  <label class="label" for="mblno">Mobile Nunber</label>
+  <input type="text" id="mblno" placeholder="Enter your mobile number" formControlName="mblno"> 
+  </div>
+</div>
 
-    <div class="errorMessage" *ngIf="mblno.errors?.['required']&& (mblno.touched||mblno.dirty)" >
-      mobile Number required
-    </div>
+<div class="errorMessage"
+  *ngIf="reactiveForm.get('personalDetails.mblno').errors?.['required'] && (reactiveForm.get('personalDetails.mblno').touched||reactiveForm.get('personalDetails.mblno').dirty)">
+  mobile number Required
+</div>
 
-    <div class="errorMessage" *ngIf="mblno.errors?.['pattern'] && (mblno.touched||mblno.dirty)" >
-      mobile Number invalid
-    </div>
+<div class="errorMessage"
+*ngIf="reactiveForm.get('personalDetails.mblno').errors?.['pattern'] && (reactiveForm.get('personalDetails.mblno').touched||reactiveForm.get('personalDetails.mblno').dirty)">
+Imvalid number
+</div>
 
-    <div class="errorMessage" *ngIf="mblno.errors?.['minlength'] && (mblno.touched||mblno.dirty)" >
-      mobile Number invalid
-    </div>
+<div class="errorMessage"
+*ngIf="reactiveForm.get('personalDetails.mblno').errors?.['minlength'] && (reactiveForm.get('personalDetails.mblno').touched||reactiveForm.get('personalDetails.mblno').dirty)">
+Invalid number
+</div>
 
-    <div class="errorMessage" *ngIf="mblno.errors?.['maxlength'] && (mblno.touched||mblno.dirty)" >
-      mobile Number invalid
-    </div>
+<div class="errorMessage"
+*ngIf="reactiveForm.get('personalDetails.mblno').errors?.['maxlength'] && (reactiveForm.get('personalDetails.mblno').touched||reactiveForm.get('personalDetails.mblno').dirty)">
+Invalid number
+</div>
 
-    <!-- amount -->
-    <div>
-      <label class="label" for="amount">amount</label>
-      <input type="number" id="amount" placeholder="Enter the amount to be paid" formControlName="amount">
-    </div>
+  <!-- amount -->
+<div>
+  <label class="label" for="amount">amount</label>
+  <input type="number" id="amount" placeholder="Enter the amount to be paid" formControlName="amount">
+  </div>
 
-    <div class="errorMessage" *ngIf="amount.errors?.['required'] && amount.touched" >
-      amount required
-    </div>
+  <div class="errorMessage"
+  *ngIf="reactiveForm.get('amount').errors?.['required'] && (reactiveForm.get('amount').touched||reactiveForm.get('amount').dirty)">
+  mobile number Required
+</div>
 
-    <!-- Payment Method -->
-    <div>
-     <label class="label" for="paymentMethod">Payment Method:</label>
-     <input type="radio" value="card" id="card" formControlName="paymentMethod">
-     <label for="card">Debit/Credit card</label>
-     <input type="radio" value="upi" id="upi" formControlName="paymentMethod">
-     <label for="upi">UPI</label>
+<div class="errorMessage"
+*ngIf="reactiveForm.get('amount').errors?.['pattern'] && (reactiveForm.get('amount').touched||reactiveForm.get('amount').dirty)">
+Imvalid number
+</div> 
 
-     <div class="errorMessage" *ngIf="paymentMethod.errors?.['required'] && paymentMethod.touched" >
-      paymentMethod required
-    </div>
-
-    </div>
+  <!-- Payment Method -->
+<div>
+  <label class="label" for="paymentMethod">Payment Method:</label>
+  <input type="radio" value="card" id="card" formControlName="paymentMethod">
+  <label for="card">Debit/Credit card</label>
+  <input type="radio" value="upi" id="upi" formControlName="paymentMethod">
+  <label for="upi">UPI</label>
+  </div>
 
     <input type="submit" value="submit" id="btn">
   </form>

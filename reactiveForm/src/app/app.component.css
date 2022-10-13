@@ -46,3 +46,8 @@ input.ng-invalid.ng-touched ,select.ng-invalid.ng-touched{
   font-style: italic;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
+personalDetails.input.ng-invalid.ng-touched ,personalDetails.select.ng-invalid.ng-touched{
+  border: red 2px solid;
+}
