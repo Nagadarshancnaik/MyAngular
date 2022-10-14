@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -22,11 +22,18 @@ export class AppComponent implements OnInit {
         }),
         amount:new FormControl(null,[Validators.required,Validators.pattern("^[0-9]*$")]),
         paymentMethod:new FormControl(null,Validators.required),
+        comments:new FormArray([
+          new FormControl(null,[Validators.required])
+       
+        ])
     });
   }
 
   onSubmit(){
     console.log(this.reactiveForm);
+  }
+  onCLick(){
+    (<FormArray>this.reactiveForm.get('comments')).push(new FormControl(null,[Validators.required]))
   }
 
   // get biller():FormControl{

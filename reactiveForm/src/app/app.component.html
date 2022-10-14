@@ -143,6 +143,14 @@ Imvalid number
   <label for="upi">UPI</label>
   </div>
 
+  <div formArrayName="comments">
+    <ng-container *ngFor="let comment of reactiveForm.get('comments')['controls'];index as i" >
+    <label class="label" for="comments">comments:</label>
+    <input type="text"  id="comments" placeholder="comments" formControlName="{{i}}">
+  </ng-container>
+  <button (click)="onCLick()">+ add comments</button>
+  </div>
+
     <input type="submit" value="submit" id="btn">
   </form>
 </div>
