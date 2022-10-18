@@ -51,3 +51,7 @@ input.ng-invalid.ng-touched ,select.ng-invalid.ng-touched{
 personalDetails.input.ng-invalid.ng-touched ,personalDetails.select.ng-invalid.ng-touched{
   border: red 2px solid;
 }
+
+#sec{
+  margin-left: 30px;
+}
