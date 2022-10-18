@@ -1,0 +1,15 @@
+
+<div class="parent"><br>
+
+<h1>Child Component</h1>
+<p>name is: {{childName}}<p>
+ <p>mark is: {{childMark}}<p>
+
+
+
+<div>
+  <label for="title">change title</label>
+  <input #title type="text">
+</div>
+<input type="button" (click)="updateTitle.emit(title.value)" value="Ok">
+</div>

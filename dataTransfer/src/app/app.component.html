@@ -1,0 +1,25 @@
+<div class="parent">
+<h1>
+  Parent component
+</h1>
+
+
+<div>
+  <label for="name">Name</label>
+  <input #name type="text" name="name" id="name">
+</div>
+
+<div>
+  <label for="mark">Mark</label>
+  <input #mark type="text" name="mark" id="mark">
+</div>
+
+<input (click)="transferData(name.value,mark.value)" type="button" value="Submit">
+
+<h3>{{title}}</h3>
+</div>
+<app-child [childName]="parentName" [childMark]="parentMark" (updateTitle)="titleChange($event)"> </app-child>
+
+
+
+
