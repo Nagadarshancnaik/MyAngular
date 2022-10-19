@@ -1,0 +1,9 @@
+<h1>child 2 component</h1>
+
+<h4>{{newMessage}}</h4>
+
+<div>
+  <label for="message2">Message to child 1</label>
+  <input type="text" #message2>
+</div>
+<button (click)="sendMessageToChild1(message2)">send to child 2</button>
