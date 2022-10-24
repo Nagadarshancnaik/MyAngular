@@ -1,0 +1,56 @@
+<!-- built in pipes -->
+<div>{{name|lowercase}}</div>
+<div>{{name2|uppercase}}</div>
+<div>{{dateEx|date }}</div>
+<div>{{jsonEx|json }}</div>
+<div>{{currencyEx|currency }}</div>
+<div>{{percentEx|percent }}</div>
+
+
+<!-- parametrising pipes -->
+
+<div>{{dateEx|date : 'dd-MMM-yy' }}</div>
+<div>{{dateEx|date : 'long' }}</div>
+<div>{{dateEx|date : 'short' }}</div>
+
+<div>{{currencyEx|currency: 'INR' }}</div>
+<div>{{currencyEx|currency: 'CAD' }}</div>
+<br>
+<br>
+
+<div>{{dateEx|date:'MMM-dd-yy'|lowercase }}</div>
+<div>{{dateEx|date|uppercase }}</div>
+
+<br>
+
+<h1 class="text-center"> {{title|titlecase}}</h1>
+
+<table class="table">
+  <thead class="bg-primary">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Salary</th>
+      <th scope="col">DOB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name|uppercase}}</td>
+      <td>{{employee.city|lowercase}}</td>
+      <td>{{employee.salary|currency:'INR':'symbol':'3.3-3'}}</td>
+      <td>{{employee.dob|date:'dd-MM-yyyy'}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
