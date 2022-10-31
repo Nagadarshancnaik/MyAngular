@@ -1,0 +1,38 @@
+<h1 >ngIf:</h1>
+<h5 *ngIf="displayName; else elseblock">Angular</h5>
+<ng-template #elseblock>
+<h5 >Else block</h5>
+</ng-template>
+
+<!-- another Syntax -->
+<div *ngIf="displayName; then thenblock; else elseblock"></div> 
+
+<ng-template #thenblock>
+  <p>if block</p>
+</ng-template>
+
+<ng-template #elseblock>
+  <p>else block</p>
+</ng-template>
+
+
+
+
+<h1>ngSwitch:</h1>
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'"> You picked red color</div>
+  <div *ngSwitchCase="'blue'"> You picked blue color</div>
+  <div *ngSwitchCase="'green'"> You picked green color</div>
+  <div *ngSwitchDefault> Invaid</div>
+</div>
+
+
+
+<h1>ngFor:</h1>
+<div *ngFor="let user of users;index as i">
+  <p>{{i}}  {{user.name}}</p>
+</div>
+
+<br>
+<h1>Custom Directive</h1>
+<div appCustomStyle >Custom element</div>

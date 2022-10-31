@@ -23,7 +23,7 @@
 
 <br>
 
-<h1 class="text-center"> {{title|titlecase}}</h1>
+<h1 class="text-center"> {{title|titlecase|uppercase}}</h1>
 
 <table class="table">
   <thead class="bg-primary">
@@ -32,7 +32,7 @@
       <th scope="col">Name</th>
       <th scope="col">City</th>
       <th scope="col">Salary</th>
-      <th scope="col">DOB</th>
+      <th scope="col">DOJ</th>
     </tr>
   </thead>
   <tbody>
@@ -41,11 +41,46 @@
       <td>{{employee.name|uppercase}}</td>
       <td>{{employee.city|lowercase}}</td>
       <td>{{employee.salary|currency:'INR':'symbol':'3.3-3'}}</td>
-      <td>{{employee.dob|date:'dd-MM-yyyy'}}</td>
+      <td>{{employee.doj|date:'dd-MMM-yyyy'|lowercase}}</td>
     </tr>
   </tbody>
 </table>
 
+<p>{{employees|json}}</p>
+<br><br><br>
+
+<h1 class="text-center"> {{title2|titlecase|uppercase}}</h1>
+
+<table class="table">
+  <thead class="bg-primary">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Salary</th>
+      <th scope="col">DOJ</th>
+      <th scope="col">Experience</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name|uppercase}}</td>
+      <td>{{employee.city|lowercase}}</td>
+      <td>{{employee.salary|currency:'INR':'symbol':'3.3-3'}}</td>
+      <td>{{employee.doj|date:'dd-MMM-yyyy'|lowercase}}</td>
+      <td>{{employee.doj|experience}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<input type="text" #name3>
+<button (click)="reverse(name3.value)"> Click me
+</button>
+<p>{{userName|reverse}}</p>
 
 
 

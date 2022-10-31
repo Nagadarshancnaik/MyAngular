@@ -1,0 +1,163 @@
+<!-- header-section -->
+<app-header-section></app-header-section>
+<!-- body section -->
+
+<div class="policy-body">
+  <div class="policy-side">
+    <ul>
+      <li class="pol-side-head">Your questionaries</li>
+      <li class="pol-side-button">NEW QUESTINARIES</li>
+      <li class="pol-side-secure">Secure coding Guidelines..</li>
+    </ul>
+    <ul>
+      <li class="pol-side-list">
+        ISMS questionaries
+        <img class="pol-side-arrow1" src="/assets/ic_arrow_forward.png" />
+      </li>
+      <li class="pol-side-list">
+        PA questionaries
+        <img class="pol-side-arrow2" src="/assets/ic_arrow_forward.png" />
+      </li>
+      <li class="pol-side-list">
+        process questionaries<img class="pol-side-arrow3" src="/assets/ic_arrow_forward.png" />
+      </li>
+    </ul>
+  </div>
+
+  <div class="pol-section">
+    <div class="pol-section-first">
+      <p class="pol-section-head">Questionnaire</p>
+
+      <mat-form-field floatlabel="auto" appearance="outline" class="input1">
+        <mat-label>Enter title</mat-label>
+        <input matInput type="text" value="Secure Coding guidelines" />
+        <mat-hint>Please enter appropriate title</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field floatlabel="auto" appearance="outline" class="input2">
+        <mat-label>Description</mat-label>
+        <textarea rows="3" cols="100%" matInput type="text"
+          value="These Guidelines Helps you to code in a secure manor which would assist in keeping the product data safe"></textarea>
+      </mat-form-field>
+
+      <div class="pol-section-input3-4">
+        <div>
+          <mat-form-field floatlabel="auto" appearance="outline" class="input3">
+            <mat-label>Button Title</mat-label>
+            <input matInput type="text" value="I Accept" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field floatlabel="auto" appearance="outline" class="input4">
+            <mat-label>Button Text</mat-label>
+            <input matInput type="text" value="I have read the guidelines" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-form-field floatlabel="auto" appearance="outline" class="input5">
+        <mat-label>Check box text</mat-label>
+        <input matInput type="text" value="I had read the guidelines" />
+      </mat-form-field>
+
+      <div class="pol-section-adddetail">
+        <p class="pol-section-addtional">Additional Details</p>
+
+        <div class="pol-section-calender">
+          <div class="date1">
+            <mat-form-field appearance="outline" class="input6">
+              <mat-label>Select Start Date</mat-label>
+              <input matInput [matDatepicker]="picker" />
+              <mat-datepicker-toggle matSuffix [for]="picker" class="material-icons color_red"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="date2">
+            <mat-form-field appearance="outline" class="input7">
+              <mat-label>Select End Date</mat-label>
+              <input matInput [matDatepicker]="picker1" />
+              <mat-datepicker-toggle matSuffix [for]="picker1" class="material-icons color_red"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="date3">
+            <mat-form-field floatlabel="auto" appearance="outline" class="input8">
+              <mat-label>Auto Remainder</mat-label>
+              <input matInput type="text" value="4 Days" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="pol-section-ppt">
+          <div>
+            <mat-form-field floatlabel="auto" appearance="outline" class="input9">
+              <mat-label>Select Content PPT File</mat-label>
+              <input matInput type="text" value="Secure Coding.ppt" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field floatlabel="auto" appearance="outline" class="input10">
+              <mat-label>Select participant xl sheet</mat-label>
+              <input matInput type="text" value="Participant.xls" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field floatlabel="auto" appearance="outline" class="input11">
+            <mat-label>Mail Body</mat-label>
+            <textarea rows="3" cols="100%" matInput type="text"
+              value="Hello Name You are hear-by invited to read and accept the terms and conditions by clicking on the following link"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="pol-section-second">
+      <div class="pol-section-border">
+        <div class="pol-section-icons">
+          <div class="icon1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="save"
+              class="material-icons color_red"></mat-icon>SAVE
+          </div>
+          <div class="icon1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="preview"
+              class="material-icons color_red"></mat-icon>PREVIEW
+          </div>
+          <div class="icon1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="publish"
+              class="material-icons color_red"></mat-icon>PUBLISH
+          </div>
+          <div class="icon1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_alert"
+              class="material-icons color_red"></mat-icon>REMIND
+          </div>
+          <div class="icon1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="note"
+              class="material-icons color_red"></mat-icon>NOTE
+          </div>
+
+          <div>
+            <button mat-button (click)="openDialog()" id="option-btn" mat-fab color="accent">
+              <mat-icon aria-hidden="false" aria-label=" notes icon" fontIcon="add"></mat-icon>
+            </button>
+            <div *ngIf="showMe" class="button">
+              <button mat-button (click)="openDialog()"  id="option-btn" mat-fab color="accent">
+                <mat-icon aria-hidden="false" aria-label=" notes icon" fontIcon="close"></mat-icon>
+              </button>
+              <button class="dialogeButton">Change Password</button>
+              <button (click)="superAdmin()" class="dialogeButton">Remove/add super admin</button>
+              <button class="dialogeButton">Remove/add admin</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer section -->
+<app-footer-section></app-footer-section>

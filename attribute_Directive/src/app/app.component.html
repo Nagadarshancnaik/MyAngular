@@ -1,0 +1,25 @@
+ <h3>ngclass</h3>
+ <div [ngClass]="'c1'">ngClass</div>  
+ <br>
+<div [ngClass]="'c1 c2'">ngClass</div>
+<br>
+<div [ngClass]="styleC1">ngClass</div>   <!--using varibale -->
+<br>
+<div [ngClass]="conditionC1==='c1'?'c1':'c2'">ngClass</div>   <!--using condition -->
+
+<div [ngClass]="{c1:true,c4:true}">ngClass</div>   <!--using objet -->
+
+<br><br>
+
+<h3>ngStyle</h3>
+<div [ngStyle]="{'color':'green','font-size':'30px'}">ngstyle</div>
+<br>
+<div [ngStyle]="{'color':style}">ngstyle</div>
+
+<br><br>
+<h3>ngModel</h3>
+<input [(ngModel)]="name" type="text">
+{{name}}
+
+
+
