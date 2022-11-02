@@ -1,0 +1,30 @@
+
+{
+  "passwordManager":[
+      {
+        "name": "naga",
+        "pass": 123,
+        "id":1
+      },
+      {
+        "name": "pooja",
+        "pass": 124,
+        "id":2
+      },
+      {
+        "name": "tanu",
+        "pass": 125,
+        "id":3
+      },
+      {
+        "name": "nithin",
+        "pass": 126,
+        "id":4
+      },
+      {
+        "name": "rahul",
+        "pass": 127,
+        "id":5
+      }
+    ]
+  }

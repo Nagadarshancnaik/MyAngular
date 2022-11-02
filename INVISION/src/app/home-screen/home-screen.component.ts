@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ButtonHomeScreenComponent } from '../button-home-screen/button-home-screen.component';
 import { SuperAdminComponent } from '../super-admin/super-admin.component';
+import { Router } from '@angular/router';
 
 
 @Component({

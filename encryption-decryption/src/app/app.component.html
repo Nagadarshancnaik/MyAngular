@@ -1,0 +1,33 @@
+<h1 class="text-center">AES Encryption and Decryption with angular</h1>
+<br />
+<div>
+  <div class="row">
+    <div class="col-sm-6">
+      <br />
+      <div class="form-group">
+        <label for="txtTextToConvert">Plain Text</label>
+        <input type="text" class="form-control" placeholder="Enter text you want to encrypt" [(ngModel)]="message" />
+      </div>
+      <div class="form-group">
+        <label for="txtPassword">Key</label>
+        <input type="password" class="form-control" placeholder="Enter encryption password" [(ngModel)]="key" />
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="encrypt()">
+        Encryption
+      </button>
+
+      <textarea class="form-control" readonly rows="3">{{encryptedMessage}}</textarea>
+      <br />
+    </div>
+
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-dark btn-lg btn-block" (click)="decrypt()">
+        Decryption
+      </button>
+      <br />
+
+      <textarea class="form-control" readonly rows="3">{{decryptedMessage}}</textarea>
+      <br />
+    </div>
+  </div>
+</div>
