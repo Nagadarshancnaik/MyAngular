@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 
 
 interface login extends Array<login[]>{
+ 
   id:number,
 
-  userName:string,
+  name:string,
 
-  password:string
+  pass:string
 }
 
 @Injectable({
@@ -20,6 +21,19 @@ export class InvisionService {
   
 
   getpass():Observable<login[]>{
+    return (this.http.get<login[]>('http://localhost:3000/passwordManager'));
+   }
+
+   updateEmployee(pass:any,name:any,id:any){
+    const body={
+      name: name,
+      pass: pass,
+      id:id
+    }
+    return this.http.put('http://localhost:3000/passwordManager/'+id,body);
+   }
+
+   loginCheck():Observable<login[]>{
     return (this.http.get<login[]>('http://localhost:3000/passwordManager'));
    }
 }

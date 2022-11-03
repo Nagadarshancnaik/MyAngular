@@ -10,7 +10,9 @@ const routes: Routes = [
   {path: '' , component:LoginPageComponent},
   {path: 'login',component:LoginPageComponent},
   {path:'home',component:HomeScreenComponent},
-  {path:'changePassword',component:ChangePasswordComponent}
+  {path:'changePassword',component:ChangePasswordComponent},
+  // {path: '' , component:LoginPageComponent},
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

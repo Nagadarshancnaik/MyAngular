@@ -16,13 +16,16 @@ export class LoginPageComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.myForm = this.fb.group({
-      name: this.fb.control(null, Validators.required),
-      password: this.fb.control(null, Validators.required),
+    this.myForm = this.fb.group ( {
+      name: this.fb.control(null, [Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
+      password: this.fb.control(null, [Validators.required,Validators.pattern('((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,30})')]),
     });
   }
   onSubmit() {
     // console.log(this.myForm);
+
+     localStorage.setItem("employee",(JSON.stringify(this.myForm.value)))
+
     this.loginservice.getpass().subscribe((data: any) => {
       console.log(data);
       for (let d of data) {
@@ -42,5 +45,6 @@ export class LoginPageComponent implements OnInit {
         alert("invalid password")
       }
     });
+    
   }
 }

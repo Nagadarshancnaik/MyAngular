@@ -10,38 +10,43 @@ import { InvisionService } from '../invision.service';
 })
 export class ChangePasswordComponent implements OnInit {
   count: any = 0;
+  getEmployee:any;
   myForm!: FormGroup;
+  employeePass: any;
+  id:any;
   constructor(
     private fb: FormBuilder,
     private loginservice: InvisionService,
     private router: Router
   ) {}
   ngOnInit(): void {
+    this.getEmployee=localStorage.getItem("employee");
+    this.getEmployee=JSON.parse(this.getEmployee);
+
     this.myForm = this.fb.group({
-      name: this.fb.control(null, Validators.required),
-      password: this.fb.control(null, Validators.required),
+      newPassword: this.fb.control(null, Validators.required),
+      rePassword: this.fb.control(null, Validators.required),
+
+      
     });
-  }
-  onSubmit() {
-    // console.log(this.myForm);
-    this.loginservice.getpass().subscribe((data: any) => {
-      console.log(data);
-      for (let d of data) {
-        if (
-          this.myForm.get('name')?.value == d.name &&
-          this.myForm.get('password')?.value == d.pass
-        ) {
-          this.count++;
+    this.loginservice.loginCheck().subscribe(data=>{
+      for(let i of data){
+        if(i.name==this.getEmployee.name){
+          this.id=i.id;
           break;
         }
+        
       }
-      if (this.count == 1) {
-        console.log('password matched');
-        this.router.navigate(['/home']);
-      }
-      else{
-        alert("invalid password")
-      }
-    });
+    })
+  }
+
+  onSubmit() {
+    // console.log(this.myForm);
+    if(this.myForm.get("newPassword")?.value===this.myForm.get("rePassword")?.value){
+      this.employeePass=this.myForm.get("newPassword")?.value;
+      this.loginservice.updateEmployee(this.employeePass,this.getEmployee.name,this.id).subscribe();
+      this.router.navigate(['home']);
+  
+    }
   }
 }

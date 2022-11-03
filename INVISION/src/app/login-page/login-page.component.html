@@ -1,4 +1,3 @@
-
 <div class="policy-header">
   <div class="robologo">
     <img src="/assets/Robosoft_logo_horizontal (1).png" width="300" />
@@ -11,25 +10,36 @@
 
       <mat-form-field floatlabel="auto" appearance="outline" class="input1">
         <mat-label>Enter Username</mat-label>
-        <input
-          matInput
-          type="text"
-          placeholder="Enter Username"
-          formControlName="name"
-        />
+        <input matInput type="text" placeholder="Enter Username" formControlName="name" />
+        <mat-error
+          *ngIf="myForm.get('name')?.errors?.['required'] && (myForm.get('name')?.touched || myForm.get('name')?.dirty)">
+          User name required</mat-error>
+
+          <mat-error
+          *ngIf="myForm.get('name')?.errors?.['pattern'] && (myForm.get('name')?.touched || myForm.get('name')?.dirty)">
+          User Name should be alphabets</mat-error>
+
       </mat-form-field>
       <mat-form-field floatlabel="auto" appearance="outline" class="input2">
         <mat-label>Enter Password</mat-label>
-        <input
-          matInput
-          type="text"y
-          
-          placeholder="Enter Password"
-          formControlName="password"
-        />
+        <input matInput type="text"  placeholder="Enter Password" formControlName="password" />
+        <mat-error
+        *ngIf="myForm.get('password')?.errors?.['required'] && (myForm.get('password')?.touched || myForm.get('password')?.dirty)">
+         password required</mat-error>
+
+     
+
+
+        <mat-error
+        *ngIf="myForm.get('password')?.errors?.['pattern'] && (myForm.get('password')?.touched || myForm.get('password')?.dirty)">
+        User password should be alphabets</mat-error>
+
+
+
+
       </mat-form-field>
       <div>
-        <input type="submit" class="btn" value="login"  [disabled]="myForm.invalid" />
+        <input type="submit" class="btn" value="login"  />
       </div>
       <div>
         <button class="forgot" routerLink="/forgotPassword">Forgot Password?</button>
