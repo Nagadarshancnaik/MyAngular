@@ -31,7 +31,7 @@ export class ChangePasswordComponent implements OnInit {
     });
     this.loginservice.loginCheck().subscribe(data=>{
       for(let i of data){
-        if(i.name==this.getEmployee.name){
+        if(i.name==this.getEmployee.name&&i.pass==this.getEmployee.password){
           this.id=i.id;
           break;
         }
@@ -44,9 +44,12 @@ export class ChangePasswordComponent implements OnInit {
     // console.log(this.myForm);
     if(this.myForm.get("newPassword")?.value===this.myForm.get("rePassword")?.value){
       this.employeePass=this.myForm.get("newPassword")?.value;
+
+
       this.loginservice.updateEmployee(this.employeePass,this.getEmployee.name,this.id).subscribe();
       this.router.navigate(['home']);
-  
+
+      
     }
   }
 }

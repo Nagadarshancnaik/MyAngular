@@ -24,6 +24,12 @@ export class InvisionService {
     return (this.http.get<login[]>('http://localhost:3000/passwordManager'));
    }
 
+  
+
+   loginCheck():Observable<login[]>{
+    return (this.http.get<login[]>('http://localhost:3000/passwordManager'));
+   }
+
    updateEmployee(pass:any,name:any,id:any){
     const body={
       name: name,
@@ -33,7 +39,15 @@ export class InvisionService {
     return this.http.put('http://localhost:3000/passwordManager/'+id,body);
    }
 
-   loginCheck():Observable<login[]>{
-    return (this.http.get<login[]>('http://localhost:3000/passwordManager'));
+
+
+   //super admin
+   postEmployeeDetail(data:any){
+    return this.http.post<any>('http://localhost:3000/EmployeeDetails/',data);
    }
+
+   getEmployeeDetail(){
+    return this.http.get<any>('http://localhost:3000/EmployeeDetails/');
+   }
+   
 }

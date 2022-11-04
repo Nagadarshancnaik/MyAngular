@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routers } from './app-routing.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     LoginPageComponent,
     routers,
     ForgotPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AdminComponent
    
   ],
   imports: [

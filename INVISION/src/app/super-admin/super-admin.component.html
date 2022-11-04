@@ -1,33 +1,36 @@
 <!-- <button mat-button mat-dialog-close>Cancel</button>
 <button mat-button mat-dialog-close>Cancel</button> -->
+<mat-dialog-actions align="end">
+    <mat-icon aria-hidden="false" aria-label=" notes icon" mat-dialog-close="true" fontIcon="close"></mat-icon>
+</mat-dialog-actions>
 
 <p class="head">Add/Remove Super Admin</p>
 
-<div class="superInput">
- 
-    <mat-form-field floatlabel="auto" appearance="outline" class="input1">
-      <mat-label>Enter Name</mat-label>
-      <input matInput type="text" placeholder="Enter Name" />
-    </mat-form-field>
+<div >
+<form  class="superInput" [formGroup]="superAdminForm" >
+  <mat-form-field floatlabel="auto" appearance="outline" class="input1">
+    <mat-label>Enter Name</mat-label>
+    <input matInput type="text" placeholder="Enter Name" formControlName="employeeName"/>
+  </mat-form-field>
 
 
 
-    <mat-form-field floatlabel="auto" appearance="outline" class="input2">
-      <mat-label>Enter Employee Code</mat-label>
-      <input matInput type="text" placeholder="Enter Employee Code" />
-    </mat-form-field>
+  <mat-form-field floatlabel="auto" appearance="outline" class="input2">
+    <mat-label>Enter Employee Code</mat-label>
+    <input matInput type="text" placeholder="Enter Employee Code" formControlName="employeeCode"/>
+  </mat-form-field>
 
 
 
-    <mat-form-field floatlabel="auto" appearance="outline" class="input3">
-      <mat-label>Enter Email</mat-label>
-      <input matInput type="text" placeholder="Enter Email" />
-    </mat-form-field>
+  <mat-form-field floatlabel="auto" appearance="outline" class="input3">
+    <mat-label>Enter Email</mat-label>
+    <input matInput type="text" placeholder="Enter Email" formControlName="employeeEmail"/>
+  </mat-form-field>
 
+  <button mat-button id="option-btn" mat-fab color="accent" (click)="onSubmit()">
+    <mat-icon aria-hidden="false" aria-label=" notes icon" fontIcon="add"></mat-icon>
+  </button>
 
+</form>
+</div>
 
-    <button mat-button id="option-btn" mat-fab color="accent">
-      <mat-icon aria-hidden="false" aria-label=" notes icon" fontIcon="add"></mat-icon>
-    </button>
-
-  </div>

@@ -2,7 +2,7 @@
   "passwordManager": [
     {
       "name": "naga",
-      "pass": "naga@123",
+      "pass": "0000",
       "id": 1
     },
     {
@@ -24,6 +24,20 @@
       "name": "rahul",
       "pass": "rahul@123",
       "id": 5
+    }
+  ],
+  "EmployeeDetails": [
+    {
+      "employeeName": "asfg",
+      "employeeCode": "1234",
+      "employeeEmail": "vb vnh",
+      "id": 1
+    },
+    {
+      "employeeName": "dfbgd",
+      "employeeCode": "sxvc",
+      "employeeEmail": "w234",
+      "id": 2
     }
   ]
 }

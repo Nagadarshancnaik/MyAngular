@@ -25,6 +25,7 @@ export class LoginPageComponent implements OnInit {
     // console.log(this.myForm);
 
      localStorage.setItem("employee",(JSON.stringify(this.myForm.value)))
+    //  sessionStorage.setItem("employee",(JSON.stringify(this.myForm.value)))
 
     this.loginservice.getpass().subscribe((data: any) => {
       console.log(data);

@@ -39,7 +39,7 @@
 
       </mat-form-field>
       <div>
-        <input type="submit" class="btn" value="login"  />
+        <input type="submit" class="btn" value="login" [disabled]="myForm.invalid   "  />
       </div>
       <div>
         <button class="forgot" routerLink="/forgotPassword">Forgot Password?</button>
