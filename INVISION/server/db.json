@@ -2,7 +2,7 @@
   "passwordManager": [
     {
       "name": "naga",
-      "pass": "0000",
+      "pass": "Naga@123",
       "id": 1
     },
     {
@@ -26,18 +26,36 @@
       "id": 5
     }
   ],
-  "EmployeeDetails": [
+  "SuperAdmin": [
     {
-      "employeeName": "asfg",
-      "employeeCode": "1234",
-      "employeeEmail": "vb vnh",
+      "employeeName": "11",
+      "employeeCode": "22",
+      "employeeEmail": "33",
       "id": 1
     },
     {
-      "employeeName": "dfbgd",
-      "employeeCode": "sxvc",
-      "employeeEmail": "w234",
+      "employeeName": "w10",
+      "employeeCode": "22",
+      "employeeEmail": "33ee",
       "id": 2
+    },
+    {
+      "employeeName": "2222222",
+      "employeeCode": "1",
+      "employeeEmail": "34",
+      "id": 3
+    },
+    {
+      "employeeName": "11",
+      "employeeCode": "22",
+      "employeeEmail": "33",
+      "id": 4
+    },
+    {
+      "employeeName": "10",
+      "employeeCode": "22",
+      "employeeEmail": "33ee",
+      "id": 5
     }
   ]
 }
