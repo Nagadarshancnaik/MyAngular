@@ -10,19 +10,19 @@
             <mat-label>Enter Password</mat-label>
             <input matInput type="text"  placeholder="Enter Password"  />
             </mat-form-field> -->
-          <input type="text" id="input1" placeholder="Search city">
+          <input type="text" id="input1" placeholder="Search city" #name>
         </div>
         <div class="icon">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search "></mat-icon>
+          <mat-icon (click)="onSearch(name.value)" aria-hidden="false" aria-label="Example home icon" fontIcon="search "></mat-icon>
         </div>
       </div>
     </div>
     <div class="navbar">
       <nav class="a">
         <ul>
-          <li class="navitem1"><a href="#">HOME</a> </li>
-          <li class="navitem2"><a href="#">FAVOURITE</a> </li>
-          <li class="navitem3"><a href="#">RECENT SEARCH</a></li>
+          <li class="navitem1"><a routerLink='/home'>HOME</a> </li>
+          <li class="navitem2"><a routerLink='/favourite'>FAVOURITE</a> </li>
+          <li class="navitem3"><a routerLink='/recent'>RECENT SEARCH</a></li>
         </ul>
       </nav>
       <div class="date">
@@ -30,33 +30,84 @@
       </div>
     </div>
     <div class="location">
-      Udupi, Karnataka
+     {{cityWeather.name}}
     </div>
     <div>
-      <mat-icon class="fav-icon">favorite</mat-icon> 
+      <mat-icon class="fav-icon">favorite_border
+      </mat-icon>
       <span class="fav-text">Add to favourite</span>
     </div>
     <div class="sunny">
       <img src="/assets/icon_mostly_sunny.png" alt="">
     </div>
     <div class="temperature">
-      <div class="temp">87</div>
+      <div class="temp">{{(cityWeather['main'].temp -273.15).toFixed(0)}}&#176;</div>
       <div class="temp-unit">
         <button class="temp-button">&#176;C</button>
-       <button class="temp-button">&#176;F</button>
+        <button class="temp-button">&#176;F</button>
       </div>
     </div>
-<div class="most-sunny">Mostly Sunny</div>
+    <div class="most-sunny">Mostly Sunny</div>
     <hr>
+  </div>
+  <div class="footer">
+    <!-- 1 -->
+    <div class="Min-Max">
+      <div class="aa">
+        <img src="/assets/icon_temperature_info.png">
+      </div>
+      <div>
+        <div class="footer-text1">Min - Max</div>
+        <div class="footer-text2">{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="Precipitation">
+      <div class="aa">
+        <img src="/assets/icon_precipitation_info.png">
+      </div>
+      <div>
+        <div class="footer-text1">Pressure</div>
+        <div class="footer-text2">{{cityWeather['main'].pressure}}</div>
+
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="Humidity">
+      <div class="aa">
+        <img src="/assets/icon_humidity_info.png">
+      </div>
+      <div>
+        <div class="footer-text1">Humidity</div>
+        <div class="footer-text2">{{cityWeather['main'].humidity}}%</div>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="Wind">
+      <div class="aa">
+        <img src="/assets/icon_wind_info.png">
+      </div>
+      <div>
+        <div class="footer-text1">Wind</div>
+        <div class="footer-text2">{{cityWeather['wind'].speed}} mph</div>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="Visibility">
+      <div class="aa">
+        <img src="/assets/icon_visibility_info.png">
+      </div>
+      <div class="aaa">
+        <div class="footer-text1">Visibility</div>
+        <div class="footer-text2">{{cityWeather.visibility}} mph</div>
+      </div>
+    </div>
+
+
+
   </div>
 
 </div>
-
-
-
-
-
-
 
 
 

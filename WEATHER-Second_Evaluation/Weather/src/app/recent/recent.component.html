@@ -1,0 +1,110 @@
+<div class="main">
+  <div class="main2">
+    <div class="header">
+      <div class="logo">
+        <img src="/assets/logo_web.png">
+      </div>
+      <div class="search">
+        <div class="input">
+          <!-- <mat-form-field floatlabel="auto" appearance="outline" class="input2">
+            <mat-label>Enter Password</mat-label>
+            <input matInput type="text"  placeholder="Enter Password"  />
+            </mat-form-field> -->
+          <input type="text" id="input1" placeholder="Search city">
+        </div>
+        <div class="icon">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="search "></mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <nav class="a">
+        <ul>
+          <li class="navitem1"><a routerLink='/home' >HOME</a> </li>
+          <li class="navitem2"><a routerLink='/favourite' >FAVOURITE</a> </li>
+          <li class="navitem3"><a routerLink='/recent'>RECENT SEARCH</a></li>
+        </ul>
+      </nav>
+      <div class="date">
+        {{date|date:'E'}},{{date|date:'mediumDate'}}&nbsp;&nbsp;{{date|date:'shortTime'}}
+      </div>
+    </div>
+    <!-- <div class="nothing-main">
+    <div class="nothing">
+      <img src="/assets/icon_nothing.png" alt="">
+    </div>
+    <div class="nothing-text">
+      No Favourites added
+    </div>
+  </div> -->
+  <div class="fav-remove">
+    <div class="added">You recently searched for</div>
+    <div class="remove">Clear All</div>
+  </div>
+
+  <div class="table-main" style="overflow-x: auto">
+    <table class="main-table">
+      <tr>
+        <td class="table-location">Udupi,Karnataka</td>
+        <td class="related-img">
+          <img src="/assets/icon_mostly_sunny_small.png" alt="" />
+        </td>
+        <td>
+          <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
+          <span class="related-msg">Mostly Sunny</span>
+        </td>
+        <td>
+          <mat-icon class="related-fav">favorite_border
+          </mat-icon>
+        </td>
+      </tr>
+      <tr>
+        <td class="table-location">Udupi,Karnataka</td>
+        <td class="related-img">
+          <img src="/assets/icon_mostly_sunny_small.png" alt="" />
+        </td>
+        <td>
+          <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
+          <span class="related-msg">Mostly Sunny</span>
+        </td>
+        <td>
+          <mat-icon class="related-fav">favorite_border
+          </mat-icon>
+        </td>
+        
+      </tr>
+      <tr>
+        <td class="table-location">Udupi,Karnataka</td>
+        <td class="related-img">
+          <img src="/assets/icon_mostly_sunny_small.png" alt="" />
+        </td>
+        <td>
+          <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
+          <span class="related-msg">Mostly Sunny</span>
+        </td>
+        <td>
+          <mat-icon class="related-fav">favorite_border
+          </mat-icon>
+        </td>
+        
+      </tr>
+      <tr>
+        <td class="table-location">Udupi,Karnataka</td>
+        <td class="related-img">
+          <img src="/assets/icon_mostly_sunny_small.png" alt="" />
+        </td>
+        <td>
+          <span class="related-deg">31&#176;</span
+          ><span class="cel-faren">C</span>
+          <span class="related-msg">Mostly Sunny</span>
+        </td>
+        <td>
+          <mat-icon class="related-fav">favorite_border
+          </mat-icon>
+        </td>
+        
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>
