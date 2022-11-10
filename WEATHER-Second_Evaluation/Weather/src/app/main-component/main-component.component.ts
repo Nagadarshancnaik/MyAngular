@@ -17,6 +17,7 @@ city:any;
   cityName='udupi';
   routerUrl!: string;
   cityWeather:any;
+  active='active';
   constructor(public http:HttpClient,public weatherservice:WeatherService) { 
     // this.searchData();
   }

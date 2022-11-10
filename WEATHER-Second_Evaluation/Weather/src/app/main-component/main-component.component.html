@@ -176,9 +176,9 @@
             <i style="font-size:24px" class="fa">&#xf0c9;</i>
           </label>
           <ul>
-            <li class="navitem1"><a routerLink='/home'>HOME</a> </li>
-            <li class="navitem2"><a routerLink='/favourite'>FAVOURITE</a> </li>
-            <li class="navitem3"><a routerLink='/recent'>RECENT SEARCH</a></li>
+            <li class="navitem1" routerLink='/home' [routerLinkActive]="active">HOME </li>
+            <li class="navitem2" routerLink='/favourite'[routerLinkActive]="active">FAVOURITE </li>
+            <li class="navitem3" routerLink='/recent'[routerLinkActive]="active">RECENT SEARCH</li>
           </ul>
         </nav>
         <div class="date">
