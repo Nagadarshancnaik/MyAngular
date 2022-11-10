@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
   <div class="main2">
     <div class="header">
       <div class="logo">
@@ -6,10 +6,7 @@
       </div>
       <div class="search">
         <div class="input">
-          <!-- <mat-form-field floatlabel="auto" appearance="outline" class="input2">
-            <mat-label>Enter Password</mat-label>
-            <input matInput type="text"  placeholder="Enter Password"  />
-            </mat-form-field> -->
+       
           <input type="text" id="input1" placeholder="Search city" #name>
         </div>
         <div class="icon">
@@ -51,7 +48,6 @@
     <hr>
   </div>
   <div class="footer">
-    <!-- 1 -->
     <div class="Min-Max">
       <div class="aa">
         <img src="/assets/icon_temperature_info.png">
@@ -61,7 +57,6 @@
         <div class="footer-text2">{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
       </div>
     </div>
-    <!-- 2 -->
     <div class="Precipitation">
       <div class="aa">
         <img src="/assets/icon_precipitation_info.png">
@@ -72,7 +67,6 @@
 
       </div>
     </div>
-    <!-- 3 -->
     <div class="Humidity">
       <div class="aa">
         <img src="/assets/icon_humidity_info.png">
@@ -82,7 +76,6 @@
         <div class="footer-text2">{{cityWeather['main'].humidity}}%</div>
       </div>
     </div>
-    <!-- 4 -->
     <div class="Wind">
       <div class="aa">
         <img src="/assets/icon_wind_info.png">
@@ -92,7 +85,7 @@
         <div class="footer-text2">{{cityWeather['wind'].speed}} mph</div>
       </div>
     </div>
-    <!-- 5 -->
+
     <div class="Visibility">
       <div class="aa">
         <img src="/assets/icon_visibility_info.png">
@@ -102,12 +95,8 @@
         <div class="footer-text2">{{cityWeather.visibility}} mph</div>
       </div>
     </div>
-
-
-
   </div>
-
-</div>
+</div> -->
 
 
 
@@ -120,3 +109,270 @@
     <input type="text">
   </div>
 </div> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="row m-0 pt-5">
+        <div class="col-6 col-md-6 p-0 icon">
+          <img src="./assets/logo_web.png " alt="" />
+        </div>
+        <div class="col-6 col-md-6 p-0 search">
+          <div class="input">
+            <input type="text" #name placeholder="Search city" />
+            <mat-icon matPrefix (click)="onSearch(name.value)" class="serach-icon">search</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row m-0 mt-5 relative">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item pl-0" [class.active]="routerUrl == '/home'">
+                <a class="nav-link" routerLink="/weather-home" [class.link-active]="routerUrl == '/home'">HOME <span
+                    class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/favourite">FAVOURITE <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/recent">RECENT SEARCH <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item ms-auto">
+                <a class="nav-link" href="#">
+                  {{ date | date: "E" }},{{
+                  date | date: "mediumDate"
+                  }}&nbsp;&nbsp;{{ date | date: "shortTime" }}
+                  <span class="sr-only"></span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="line-copy"></div>
+      </div> -->
+
+      <div class="navbar">
+        <nav class="a">
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i style="font-size:24px" class="fa">&#xf0c9;</i>
+          </label>
+          <ul>
+            <li class="navitem1"><a routerLink='/home'>HOME</a> </li>
+            <li class="navitem2"><a routerLink='/favourite'>FAVOURITE</a> </li>
+            <li class="navitem3"><a routerLink='/recent'>RECENT SEARCH</a></li>
+          </ul>
+        </nav>
+        <div class="date">
+          {{date|date:'E'}},{{date|date:'mediumDate'}}&nbsp;&nbsp;{{date|date:'shortTime'}}
+        </div>
+      </div>
+      <div class="line-copy"></div>
+      <div class="mainHome">
+        <div class="row mt-5 aa">
+          <div class="col-12 current-location">{{cityWeather.name}}</div>
+        </div>
+
+        <div class="row m-0 mt-3  hey">
+          <div class="col-12 p-0 hello">
+            
+            <mat-icon class="fav-icon">favorite_border
+            </mat-icon>
+            <span class="fav-text">Add to favourite</span>
+          
+        </div>
+      </div>
+      <div class="row m-0 mt-4">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <img src="./assets/icon_mostly_sunny.png" alt="" />
+        </div>
+      </div>
+
+      <div class="row m-0 mt-4">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <div class="deg-87">{{(cityWeather['main'].temp -273.15).toFixed(0)}}&#176;</div>
+          <div class="cel-far mt-3 p-2">
+            <button class="c">&#176;C</button> <button class="c">&#176;F</button>
+          </div>
+        </div>
+      </div>
+      <div class="row pb-3 m-0">
+        <div class="col-12 Mostly Sunny-col mt-3 mb-3">
+          <p class="mostly-sunny">Mostly Sunny</p>
+        </div>
+      </div>
+
+      <div class="line-copy1"></div>
+      <!-- <div class="footer pb-3" style="width: 95%; margin: auto ">
+        <div class="row m-0  mt-40px d-flex justify-content-space-around" >
+          <div class="col-12 col-md-3 p-0 d-flex justify-content-center">
+            <div class="row m-0">
+              <div class="col-2">
+                <img src="./assets/icon_temperature_info.png" alt="" />
+              </div>
+              <div class="col-10">
+                <div class="row m-0">
+                  <div class="col-12 p-1">
+                    <span class="Winds" id="Min">Min - Max</span>
+                  </div>
+                  <div class="col-12 p-1">
+                    <p id="Min-deg">{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2 p-0">
+            <div class="row m-0">
+              <div class="col-2">
+                <img src="./assets/icon_precipitation_info.png" alt="" />
+              </div>
+              <div class="col-10">
+                <div class="row m-0 p-1">
+                  <div class="col-12 p-1">
+                    <span class="Winds" style="display: inline-block; margin-left: 10px" id="Min">Precipitation</span>
+                  </div>
+                  <div class="col-12 p-1">
+                    <p id="Precipitation-per" style="margin-left: 10px">{{cityWeather['main'].pressure}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2 p-0">
+            <div class="row m-0">
+              <div class="col-2">
+                <img src="./assets/icon_humidity_info.png" alt="" />
+              </div>
+              <div class="col-10">
+                <div class="row m-0">
+                  <div class="col-12 p-1">
+                    <span class="Winds" id="Humidity">Humidity</span>
+                  </div>
+                  <div class="col-12 p-1">
+                    <p id="Humidity-perc">{{cityWeather['main'].humidity}}%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2 p-0">
+            <div class="row m-0">
+              <div class="col-2">
+                <img src="./assets/icon_wind_info.png" alt="" />
+              </div>
+              <div class="col-10">
+                <div class="row m-0">
+                  <div class="col-12 p-1">
+                    <span class="Winds" id="Wind" style="display: inline-block; margin-left: 10px">Wind</span>
+                  </div>
+                  <div class="col-12 p-1">
+                    <p id="Min-deg" style="margin-left: 10px">{{cityWeather['wind'].speed}} mph</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3 p-0">
+            <div class="row m-0">
+              <div class="col-2">
+                <img src="./assets/icon_visibility_info.png" alt="" />
+              </div>
+              <div class="col-10">
+                <div class="row m-0">
+                  <div class="col-12 p-1">
+                    <span class="Winds" style="display: inline-block; margin-left: 10px"
+                      id="Visibility">Visibility</span>
+                  </div>
+                  <div class="col-12 p-1">
+                    <p id="Visibility-mph" style="margin-left: 10px">{{cityWeather.visibility}} mph</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="footer">
+        <!-- 1 -->
+        <div class="Min-Max">
+          <div class="footer-img">
+            <img src="/assets/icon_temperature_info.png">
+          </div>
+          <div>
+            <div class="footer-text1">Min - Max</div>
+            <div class="footer-text2">{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(cityWeather['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="Precipitation">
+          <div class="footer-img">
+            <img src="/assets/icon_precipitation_info.png">
+          </div>
+          <div>
+            <div class="footer-text1">Pressure</div>
+            <div class="footer-text2">{{cityWeather['main'].pressure}}</div>
+    
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="Humidity">
+          <div class="footer-img">
+            <img src="/assets/icon_humidity_info.png">
+          </div>
+          <div>
+            <div class="footer-text1">Humidity</div>
+            <div class="footer-text2">{{cityWeather['main'].humidity}}%</div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="Wind">
+          <div class="footer-img">
+            <img src="/assets/icon_wind_info.png">
+          </div>
+          <div>
+            <div class="footer-text1">Wind</div>
+            <div class="footer-text2">{{cityWeather['wind'].speed}} mph</div>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="Visibility">
+          <div class="footer-img">
+            <img src="/assets/icon_visibility_info.png">
+          </div>
+          <div class="aaa">
+            <div class="footer-text1">Visibility</div>
+            <div class="footer-text2">{{cityWeather.visibility}} mph</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

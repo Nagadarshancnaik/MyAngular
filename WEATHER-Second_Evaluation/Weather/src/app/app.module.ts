@@ -12,6 +12,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { RecentComponent } from './recent/recent.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
+import { RemoveFavComponent } from './remove-fav/remove-fav.component';
+import { ClearSearchComponent } from './clear-search/clear-search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { WeatherService } from './weather.service';
     MainComponentComponent,
     FavouriteComponent,
     RecentComponent,
-    routings
+    routings,
+    RemoveFavComponent,
+    ClearSearchComponent
   ],
   imports: [
     BrowserModule,

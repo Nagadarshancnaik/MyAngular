@@ -15,6 +15,7 @@ export class MainComponentComponent implements OnInit {
 date:any;
 city:any;
   cityName='udupi';
+  routerUrl!: string;
   cityWeather:any;
   constructor(public http:HttpClient,public weatherservice:WeatherService) { 
     // this.searchData();
