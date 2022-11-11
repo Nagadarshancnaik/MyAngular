@@ -53,7 +53,7 @@ input{
   letter-spacing: 0;
   line-height: 19px;
 }
-.home,
+/* .home,
 .nav-link,
 .favourite,
 .recent-search,
@@ -72,8 +72,53 @@ li.nav-item {
 
 .navbar-nav {
   /* border-bottom: 1px solid #FFFFFF; */
+/* }  */
+
+ul {
+  padding-inline-start: 1%;
+  margin-block-end: 0em;
+  margin-inline-end: 0px;
+  display: flex;
 }
 
+.navbar ul {
+  list-style-type: none;
+  overflow: hidden;
+  width: 40vw;
+  /* left:1% */
+}
+
+
+.navbar li {
+  /* height: 2.18%;
+width: 5.67%; */
+  text-decoration: none;
+  /* color: #FFFFFF; */
+  font-family: Roboto;
+  font-size: 13px;
+  float: left;
+  letter-spacing: 0;
+  margin-right: 10%;
+  line-height: 15px;
+}
+
+.navbar {
+  padding-top: 2%;
+  width: auto;
+  /* position: absolute; */
+  /* display: inline; */
+  display: flex;
+  /* float: left; */
+  /* justify-content: space-between; */
+  /* border-bottom: 1px solid white; */
+}
+
+.date {
+  top: 1%;
+  padding-top: 15px;
+  color: #FFFFFF;
+  padding-inline-end: 1%;
+}
 .position {
   position: absolute;
   top: 40px;
@@ -197,4 +242,115 @@ tr {
 
 .related-fav {
   text-align: end;
+}
+.checkbtn {
+  float: left;
+  cursor: pointer;
+  position: fixed;
+  left: 3%;
+  top: 7%;
+  display: none;
+  /* line-height: 80px; */
+}
+
+#check {
+  display: none;
+}
+
+
+
+
+
+
+@media screen and (max-width: 769px) {
+  input {
+    width: 60%;
+  }
+
+  .input {
+    padding-bottom: 10px;
+  }
+}
+
+
+@media screen and (max-width:735px) {
+  .navbar ul {
+
+    width: 40vw;
+    /* left:1% */
+  }
+
+  .navbar li {
+
+    margin-right: 5%;
+
+  }
+}
+
+
+@media screen and (max-width:605px) {
+  .navbar ul {
+
+    width: 40vw;
+    /* left:1% */
+  }
+
+  .navbar li {
+
+    margin-right: 2%;
+
+  }
+}
+
+@media screen and (max-width:547px) {
+  .navbar ul {
+
+    width: 40vw;
+    /* left:1% */
+  }
+
+  .navbar li {
+
+    margin-right: 0%;
+
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  input {
+    display: none;
+  }
+
+  .checkbtn {
+    position: absolute;
+    left: -5%;
+    top: -20%;
+    display: block;
+    padding-right: 10%;
+  }
+
+  .icon {
+    position: absolute;
+    left: 18%;
+    top: 4%;
+  }
+
+  .serach-icon {
+    position: absolute;
+    top: -100%;
+    right: -100%;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .line-copy {
+    display: none;
+  }
+
+  .date {
+display: none;
+}
 }

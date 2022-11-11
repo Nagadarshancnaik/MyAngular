@@ -12,112 +12,99 @@
   <div class="main">
     <div class="container">
       <div class="row m-0 pt-5">
-        <div class="col-12 col-md-6 p-0 icon">
+        <div class="col-6 col-md-6 p-0 icon">
           <img src="./assets/logo_web.png " alt="" />
         </div>
-        <div class="col-12 col-md-6 p-0 search">
+        <div class="col-6 col-md-6 p-0 search">
           <div class="input">
             <input type="text" #name placeholder="Search city" />
-            <mat-icon matPrefix  class="serach-icon">search</mat-icon>
+            <mat-icon matPrefix class="serach-icon">search</mat-icon>
           </div>
         </div>
       </div>
-      <div class="row m-0 mt-5 relative">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100">
-              <li class="nav-item pl-0" [class.active]="routerUrl == '/home'">
-                <a class="nav-link" routerLink="/home" [class.link-active]="routerUrl == '/home'">HOME <span
-                    class="sr-only"></span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/favourite">FAVOURITE <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/recent">RECENT SEARCH <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item ms-auto">
-                <a class="nav-link" href="#">
-                  {{ date | date: "E" }},{{
-                  date | date: "mediumDate"
-                  }}&nbsp;&nbsp;{{ date | date: "shortTime" }}
-                  <span class="sr-only"></span></a>
-              </li>
-            </ul>
-          </div>
+      <div class="navbar">
+        <nav class="a">
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i style="font-size:24px" class="fa">&#xf0c9;</i>
+          </label>
+          <ul>
+            <li class="navitem1" routerLink='/home' [routerLinkActive]="active">HOME </li>
+            <li class="navitem2" routerLink='/favourite'[routerLinkActive]="active">FAVOURITE </li>
+            <li class="navitem3" routerLink='/recent'[routerLinkActive]="active">RECENT SEARCH</li>
+          </ul>
         </nav>
-        <div class="line-copy"></div>
+        <div class="date">
+          {{date|date:'E'}},{{date|date:'mediumDate'}}&nbsp;&nbsp;{{date|date:'shortTime'}}
+        </div>
+      </div>
+      <div class="line-copy"></div>
+
+      <div class="row" *ngIf="show">
+        <div class="col-12 d-flex justify-content-center align-items-center nothing">
+          <img src="./assets/icon_nothing.png" alt="" />
+        </div>
       </div>
 
-      <div class="city-added-remove">
+
+      <div class="city-added-remove" *ngIf="getFavourite && getFavourite.length>0">
         <div>
-          <p class="city-added-text">6 City added as favourite</p>
+          <p class="city-added-text" >{{getFavourite.length}} City added as favourite</p>
         </div>
         <div>
           <p class="city-added-text" (click)="removeFav()">Remove All</p>
         </div>
       </div>
-  
-      <div style="overflow-x: auto">
+
+      <div style="overflow-x: auto" *ngFor="let data of getFavourite">
         <table class="main-table">
           <tr>
-            <td class="table-location">Udupi,Karnataka</td>
+            <td class="table-location">{{data.name}},Karnataka</td>
             <td class="related-img">
               <img src="./assets/icon_mostly_sunny_small.png" alt="" />
             </td>
             <td>
-              <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
+              <span class="related-deg">{{(data.main.temp -273.15).toFixed(0)}}&#176;</span><span
+                class="cel-faren">C</span>
               <span class="related-msg">Mostly Sunny</span>
             </td>
-  
-            <td class="related-fav"> <mat-icon class="fav-icon">favorite_border > </mat-icon></td>
+
+            <td class="related-fav">
+              <mat-icon class="fav-icon">favorite_border > </mat-icon>
+            </td>
           </tr>
-          <tr>
-            <td class="table-location">Udupi,Karnataka</td>
-            <td class="related-img">
-              <img src="./assets/icon_mostly_sunny_small.png" alt="" />
-            </td>
-            <td>
-              <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
-              <span class="related-msg">Mostly Sunny</span>
-            </td>
-  
-            <td class="related-fav"> <mat-icon class="fav-icon">favorite_border > </mat-icon></td>
-          </tr>
-          <tr>
-            <td class="table-location">Udupi,Karnataka</td>
-            <td class="related-img">
-              <img src="./assets/icon_mostly_sunny_small.png" alt="" />
-            </td>
-            <td>
-              <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
-              <span class="related-msg">Mostly Sunny</span>
-            </td>
-  
-            <td class="related-fav"> <mat-icon class="fav-icon">favorite_border > </mat-icon></td>
-          </tr>
-          <tr>
-            <td class="table-location">Udupi,Karnataka</td>
-            <td class="related-img">
-              <img src="./assets/icon_mostly_sunny_small.png" alt="" />
-            </td>
-            <td>
-              <span class="related-deg">31&#176;</span><span class="cel-faren">C</span>
-              <span class="related-msg">Mostly Sunny</span>
-            </td>
-  
-            <td class="related-fav">  <mat-icon class="fav-icon">favorite_border > </mat-icon></td>
-          </tr>
+
         </table>
       </div>
     </div>
   </div>
-  </body>
-  </html>
-  <mat-icon class="fav-icon">favorite_border
-  </mat-icon>
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header border-none">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <div class="are-you-sure-text">
+            Are you sure want to remove all the favourites?
+          </div>
+        </div>
+        <div class="modal-footer border-none">
+          <button type="button" class="btn btn-secondary " class="no-button" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" class="yes-button" data-dismiss="modal"
+            (click)="removeFav()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

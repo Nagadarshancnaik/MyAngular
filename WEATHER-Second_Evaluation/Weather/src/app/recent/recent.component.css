@@ -198,3 +198,10 @@ tr {
 .related-fav {
   text-align: end;
 }
+
+
+@media screen and (max-width: 500px) {
+  .abc {
+    display: none;
+  }
+}

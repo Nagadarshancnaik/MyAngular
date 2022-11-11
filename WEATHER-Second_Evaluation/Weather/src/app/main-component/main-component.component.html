@@ -193,11 +193,9 @@
 
         <div class="row m-0 mt-3  hey">
           <div class="col-12 p-0 hello">
-            
-            <mat-icon class="fav-icon">favorite_border
+            <mat-icon matSuffix [ngClass]="color" [innerText]="border" (click)="addFav()" class="fav-icon">
             </mat-icon>
-            <span class="fav-text">Add to favourite</span>
-          
+            <span class="fav-text" [ngClass]="color" [innerText]="text"></span>
         </div>
       </div>
       <div class="row m-0 mt-4">
@@ -208,9 +206,10 @@
 
       <div class="row m-0 mt-4">
         <div class="col-12 d-flex justify-content-center align-items-center">
-          <div class="deg-87">{{(cityWeather['main'].temp -273.15).toFixed(0)}}&#176;</div>
+          <div class="deg-87">{{temperature}}</div>
           <div class="cel-far mt-3 p-2">
-            <button class="c">&#176;C</button> <button class="c">&#176;F</button>
+            <button (click)="cel()" class="c">&#176;C</button> 
+            <button (click)="far()" class="c">&#176;F</button>
           </div>
         </div>
       </div>
