@@ -1,0 +1,75 @@
+.place{
+  padding-top: 50px;
+  padding-inline-start: 0.5%;
+}
+.place-name{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.fav{
+  display: flex;
+  padding-top: 17px;
+  width: 100%;
+}
+.add-fav{
+  padding-top: 6px;
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.heart{
+  padding-right: 6px;
+}
+
+.temperature-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.middle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 35px;
+}
+
+.middle-img{
+  padding-bottom: 10px;
+}
+.temp{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: 0;
+  /* line-height: 75px; */
+}
+/* .but{
+  height: 5%;
+  width: 10%;
+} */
+
+.most-sunny{
+ color: #FFFFFF;
+font-family: Roboto;
+font-size: 22px;
+letter-spacing: 0;
+line-height: 25px;
+text-align: center;
+padding-bottom: 40px;
+}
+
+.line{
+  border-bottom: 1px solid white;
+  padding-top: 30px;
+}

@@ -1,0 +1,24 @@
+<div>
+    <div class="head">
+      <div class="logo">
+        <img src="/assets/logo_web.png" alt="">
+      </div>
+      <div class="search">
+      <input type="text" placeholder="Search city" id="text-input">
+      <mat-icon class="icon">search</mat-icon>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <nav class="menu">
+        <ul>
+          <li class="navitem1">HOME </li>
+          <li class="navitem2">FAVOURITE </li>
+          <li class="navitem3">RECENT SEARCH</li>
+        </ul>
+      </nav>
+      <div class="date">
+        {{date|date:'E'}}, {{date|date:'mediumDate'}} &nbsp;&nbsp; {{date|date:'shortTime'}}
+      </div>
+    </div>
+  </div>

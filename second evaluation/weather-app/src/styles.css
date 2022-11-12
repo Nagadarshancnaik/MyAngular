@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin:0;
+  padding: 0;
+}  
+body{
+    background: url('/assets/background.png') no-repeat center center/cover;
+  object-fit: cover;
+  color: white;
+  /* height: 95vh; */
+  }
+
+  .container{
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    /* background-color: rgb(3, 51, 51); */
+    min-height: 10vh;
+  }
+
+  html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+html, body {  }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
