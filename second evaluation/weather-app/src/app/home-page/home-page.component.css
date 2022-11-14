@@ -52,12 +52,96 @@
   font-size: 64px;
   font-weight: 500;
   letter-spacing: 0;
-  /* line-height: 75px; */
+  padding-right: 10px;
+}
+
+button:not(:last-child) {
+  border-right: none;
+}
+
+button:hover {
+  background-color: white;
+  color: #e32843;
+
+}
+
+button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 5px;
+  /* padding-right: 50px; */
+  cursor: pointer;
+  margin-top: 1%;
+  
+}
+.but {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+  padding-right: 8px;
+  /* padding-top: 10px; */
+}
+
+.temp-button{
+  padding-top: 11px;
 }
 /* .but{
   height: 5%;
   width: 10%;
 } */
+
+
+/* 
+.temp-cel {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 75px;
+}
+
+button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 6px;
+  cursor: pointer;
+  margin-top: 1%;
+}
+
+
+button:not(:last-child) {
+  border-right: none;
+}
+
+button:hover {
+  background-color: white;
+  color: #e32843;
+
+}
+
+.c {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+  position: absolute;
+
+}
+.cel-far-btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+} */
+
+
+
 
 .most-sunny{
  color: #FFFFFF;
@@ -72,4 +156,71 @@ padding-bottom: 40px;
 .line{
   border-bottom: 1px solid white;
   padding-top: 30px;
+  opacity: 0.3;
+  width: 100%;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+.foot{
+  display: flex;
+  /* width: 100%; */
+}
+
+
+.footer-text1{
+color: #FFFFFF;
+font-family: Roboto;
+font-size: 15px;
+letter-spacing: 0;
+line-height: 18px;
+padding-bottom: 5px;
+}
+
+
+.footer-text2{
+color: #FFFFFF;
+font-family: Roboto;
+font-size: 22px;
+font-weight: 500;
+letter-spacing: 0;
+line-height: 25px;
+}
+
+.footer-img{
+  padding-right: 15px;
+}
+.abc{
+  padding-top: 2px;
+}
+
+@media screen and (max-width:580px){
+
+  .container{
+    width: 100%;
+  }
+  /* .place-name{
+    display: flex;
+    text-align: center; */
+    /* justify-content: center; */
+    /* padding-left: 8rem; */
+    /* width: 100%; */
+  /* } */
+ 
+
+  /* .place{
+    padding-top: 10px;
+    width: 100%;
+  }
+  .fav{
+    text-align: center;
+  } */
+
+  .footer{
+    overflow-x: auto;
+    width: 100%;
+  }
 }

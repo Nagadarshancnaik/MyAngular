@@ -1,0 +1,96 @@
+.nothing{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  padding-top: 300px;
+}
+.nothing-text{
+  padding-top: 20px;
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-align: center;
+}
+.city{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+.no-city{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 15px;
+  padding-inline-start: 0.4rem;
+}
+.remove{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+  padding-inline-end: 0.8rem; 
+}
+
+.fav-cities{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255,255,255, 0.2);
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+  /* margin:0 2%; */
+  margin-bottom: 1px;
+  
+  
+}
+.fav-contents{
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.fav-city{
+  color:white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 19px;
+  padding-inline-start: 0.5rem;
+}
+.fav-temp{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 38px;
+}
+.fav-deg{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+.fav-weather{
+color: #FFFFFF;
+font-family: Roboto;
+font-size: 18px;
+letter-spacing: 0;
+line-height: 21px;
+}
+.fav-icon{
+padding-inline-end: 30px;}

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   date: any;
-
+  active='active';
   constructor() { }
 
   ngOnInit(): void {

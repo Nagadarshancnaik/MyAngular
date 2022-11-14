@@ -1,0 +1,36 @@
+.removeFav{
+  padding: 44px;
+}
+
+.text{
+  color: #000000;
+  font-family: Roboto;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+  text-align: center;
+}
+
+.toggle-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+}
+.no,.yes{
+padding: 8px 47px;
+height: 5.09%;
+width: 8.83%;
+border-radius: 2px;
+border: none;
+color: #000000;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 18px;
+  text-align: center;
+}
+
+
