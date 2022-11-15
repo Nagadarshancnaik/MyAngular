@@ -1,10 +1,10 @@
 <div class="container">
   <app-header></app-header>
   <div class="place">
-    <div class="place-name"> udupi,kundapura</div>
+    <div class="place-name">{{homeCity.name}}</div>
     <div class="fav">
-      <mat-icon class="heart">favorite_border</mat-icon>
-      <div class="add-fav">Add to favourite</div>
+      <mat-icon class="heart" [ngClass]="color" [innerText]="border" ></mat-icon>
+      <div class="add-fav" [ngClass]="color" [innerText]="text" (click)=addToFav()></div>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class="temperature-main">
-      <div class="temp" >87</div>
+      <div class="temp" >{{homeCity.main.temp}}</div>
       <div class="temp-button">
         <button class="but">&#176;C</button>
         <button class="but">&#176;F</button>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="most-sunny">
-      Mostly Sunny
+      <!-- {{homeCity.weather.0.description}} -->
     </div>
 
   </div>
@@ -39,7 +39,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Min - Max</div>
-        <div class="footer-text2">21-21</div>
+        <div class="footer-text2">{{(homeCity['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(homeCity['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
       </div>
     </div>
     <!-- 2 -->
@@ -49,7 +49,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Pressure</div>
-        <div class="footer-text2">10000</div>
+        <div class="footer-text2">{{homeCity['main'].pressure}}</div>
 
       </div>
     </div>
@@ -60,7 +60,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Humidity</div>
-        <div class="footer-text2">30%</div>
+        <div class="footer-text2">{{homeCity['main'].humidity}}%</div>
       </div>
     </div>
     <!-- 4 -->
@@ -70,7 +70,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Wind</div>
-        <div class="footer-text2">2000mph</div>
+        <div class="footer-text2">{{homeCity['wind'].speed}} mph</div>
       </div>
     </div>
     <!-- 5 -->
@@ -80,7 +80,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Visibility</div>
-        <div class="footer-text2">10000 mph</div>
+        <div class="footer-text2">{{homeCity.visibility}} mph</div>
       </div>
     </div>
   </div>

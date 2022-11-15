@@ -8,10 +8,21 @@ import { RemoveFavComponent } from '../remove-fav/remove-fav.component';
   styleUrls: ['./favourite.component.css']
 })
 export class FavouriteComponent implements OnInit {
+show:any=false;
+  getFavList: any;
+  fav: any = true;
 
   constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.getFavList=localStorage.getItem('favCity')
+    this.getFavList=JSON.parse(this.getFavList);
+    // console.log(this.getFavList);
+    if(localStorage.getItem('favCity')){
+      this.fav = true;
+    }else{
+      this.fav = false;
+    }
   }
 
   removeFav(){

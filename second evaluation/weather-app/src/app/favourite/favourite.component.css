@@ -5,7 +5,7 @@
   /* text-align: center; */
   align-items: center;
   justify-content: center;
-  padding-top: 300px;
+  padding-top: 200px;
 }
 .nothing-text{
   padding-top: 20px;
@@ -43,6 +43,7 @@
 
 .fav-cities{
   display: flex;
+  width: 100%;
   justify-content: space-between;
   background-color: rgb(255,255,255, 0.2);
   color: white;
@@ -55,13 +56,14 @@
   
 }
 .fav-contents{
-  width: auto;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
 }
 .fav-city{
+  
   color:white;
   font-family: Roboto;
   font-size: 16px;
@@ -79,6 +81,7 @@
   line-height: 38px;
 }
 .fav-deg{
+  
   color: #FFFFFF;
   font-family: Roboto;
   font-size: 16px;
@@ -94,3 +97,103 @@ line-height: 21px;
 }
 .fav-icon{
 padding-inline-end: 30px;}
+
+.back-arrow {
+  display: none;
+}
+.fav-icon{
+  color: yellow;
+}
+
+
+
+ @media screen and (max-width:580px){
+  .container{
+    width: 95%;
+  }
+  .fav-cities{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 9vh;
+  }
+  .fav-city{
+    position: absolute;
+    left: 2%;
+  }
+
+  .fav-contents{
+    position: absolute;
+    top: 47%;
+    left: 3%;
+    
+  }
+  .fav-icon{
+    position: absolute;
+    right: 0%;
+    top: 36%;
+  }
+  .fav-img img{
+    width:30px;
+    height: 30px;
+  }
+  .fav-temp{
+    color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 21px;
+  }
+  .fav-deg{
+    color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 15px;
+  }
+.fav-weather{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.header{
+  display: none;
+}
+.back-arrow {
+  display: block;
+  background-color: white;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+.arrow-back-div{
+padding-inline-start: 1rem;
+}
+.recent-head-fvt{
+  color: #292F33;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+}
+.recent-head-div{
+  width: 60%;
+}
+.search-bar-div{
+padding-inline-end: 1rem;
+
+}
+.city{
+  padding-top: 5px;
+}
+
+ }
+
+

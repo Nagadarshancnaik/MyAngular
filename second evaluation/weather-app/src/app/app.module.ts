@@ -11,6 +11,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { RecentComponent } from './recent/recent.component';
 import { RemoveFavComponent } from './remove-fav/remove-fav.component';
 import { ClearRecentComponent } from './clear-recent/clear-recent.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,15 @@ import { ClearRecentComponent } from './clear-recent/clear-recent.component';
     routings,
     RecentComponent,
     RemoveFavComponent,
-    ClearRecentComponent
+    ClearRecentComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

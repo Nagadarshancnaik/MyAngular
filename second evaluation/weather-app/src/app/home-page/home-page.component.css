@@ -88,60 +88,6 @@ button {
 .temp-button{
   padding-top: 11px;
 }
-/* .but{
-  height: 5%;
-  width: 10%;
-} */
-
-
-/* 
-.temp-cel {
-  color: #ffffff;
-  font-family: Roboto;
-  font-size: 64px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 75px;
-}
-
-button {
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  background-color: transparent;
-  padding: 6px;
-  cursor: pointer;
-  margin-top: 1%;
-}
-
-
-button:not(:last-child) {
-  border-right: none;
-}
-
-button:hover {
-  background-color: white;
-  color: #e32843;
-
-}
-
-.c {
-  color: #ffffff;
-  font-family: Roboto;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 19px;
-  position: absolute;
-
-}
-.cel-far-btn-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1%;
-} */
-
-
-
 
 .most-sunny{
  color: #FFFFFF;
@@ -196,31 +142,109 @@ line-height: 25px;
 .abc{
   padding-top: 2px;
 }
+.color{
+  color: yellow;
+}
+.no-color{
+  color: white;
+}
 
 @media screen and (max-width:580px){
 
   .container{
     width: 100%;
+    margin: 0;  
   }
-  /* .place-name{
-    display: flex;
-    text-align: center; */
-    /* justify-content: center; */
-    /* padding-left: 8rem; */
-    /* width: 100%; */
-  /* } */
- 
+  .place{
+    width:100%;
+    text-align: center;
+    padding-top: 12px;
+  }
+  .place-name{
+    width:100%;
+    color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 21px;
 
-  /* .place{
-    padding-top: 10px;
-    width: 100%;
   }
   .fav{
-    text-align: center;
-  } */
+    width:auto;
+    margin-left: 39%;
+    padding-top: 20px;
+  }
 
+.middle{
+  padding-top: 100px;
+}
   .footer{
     overflow-x: auto;
     width: 100%;
+    flex: auto;
+    justify-content: left;
+    /* opacity: 0.1; */
+  background-color: rgba(255, 255, 255, 0.1);
+  height:21vh;
   }
+  .temp{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 52px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 61px;
+  }
+  .most-sunny{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    padding-top: 8px;
+  }
+  .temperature-main{
+  padding-top: 8px;
 }
+
+}
+
+@media screen and (max-width:500px){
+  .fav{
+  margin-left: 37%;
+}
+
+}
+
+
+@media screen and (max-width:450px){
+
+  .fav{
+    margin-left: 36%;
+  }
+  
+}
+
+
+
+
+@media screen and (max-width:400px){
+  .fav{
+    margin-left: 34%;
+  }
+  
+} 
+
+@media screen and (max-width:350px){
+  .fav{
+    margin-left: 32%;
+  }
+  
+} 
+@media screen and (max-width:300px){
+  .fav{
+    margin-left: 30%;
+  }
+  
+} 

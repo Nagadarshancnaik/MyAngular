@@ -1,25 +1,40 @@
 <div>
-    <div class="head">
-      <div class="logo">
-        <img src="/assets/logo_web.png" alt="">
-      </div>
-      <div class="search">
-      <input type="text" placeholder="Search city" id="text-input">
-      <mat-icon class="icon">search</mat-icon>
-      </div>
+  <div class="head">
+    <div class="logo">
+      <img src="/assets/logo_web.png" alt="">
     </div>
-
-    <div class="navbar">
-      <nav class="menu">
-        <ul>
-          <li class="navitem1" routerLink='/home' [routerLinkActive]="active">HOME </li>
-          <li class="navitem2" routerLink='/favourite' [routerLinkActive]="active">FAVOURITE </li>
-          <li class="navitem3" routerLink='/recent' [routerLinkActive]="active">RECENT SEARCH</li>
-        </ul>
-      </nav>
-      <div class="date">
-        {{date|date:'E'}}, {{date|date:'mediumDate'}} &nbsp;&nbsp; {{date|date:'shortTime'}}
-      </div>
+    <div class="search">
+      <input type="text" placeholder="Search city" id="text-input" #city>
+      <mat-icon class="icon" (click)="searchCity(city.value)">search</mat-icon>
     </div>
-    <div class="line1" ></div>
   </div>
+
+  <div id="menu" (click)="openMenu()" [class.hanburgerClass]="hamburger_icon_variable">
+    <div id="bar1" class="bar"></div>
+    <div id="bar2" class="bar"></div>
+    <div id="bar3" class="bar"></div>
+  </div>
+
+  <div class="nav-bar-mobile" [class.menuClass]="menuVariable">
+    <div class="nav-bar-second-div">
+      <div class="home-mobile" routerLink="/home">HOME</div>
+      <div class="home-mobile" routerLink="/favourite">FAVOURITE</div>
+      <div class="home-mobile" routerLink="/recent">RECENT SEARCH</div>
+    </div>
+  </div>
+
+
+  <div class="navbar">
+    <nav class="menu">
+      <ul>
+        <li class="navitem1" routerLink='/home' [routerLinkActive]="active">HOME </li>
+        <li class="navitem2" routerLink='/favourite' [routerLinkActive]="active">FAVOURITE </li>
+        <li class="navitem3" routerLink='/recent' [routerLinkActive]="active">RECENT SEARCH</li>
+      </ul>
+    </nav>
+    <div class="date">
+      {{date|date:'E'}}, {{date|date:'mediumDate'}} &nbsp;&nbsp; {{date|date:'shortTime'}}
+    </div>
+  </div>
+  <div class="line1"></div>
+</div>

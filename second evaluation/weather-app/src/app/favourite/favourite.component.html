@@ -1,63 +1,69 @@
+<div class="back-arrow">
+  <div class="arrow-back-div">
+    <mat-icon routerLink="/home">arrow_back</mat-icon>
+  </div>
+  <div class="recent-head-div">
+    <p class="recent-head-fvt">Favourite</p>
+  </div>
+  <div class="search-bar-div">
+    <mat-icon   class="serach-bar-icon">search</mat-icon>
+  </div>
+</div>
+
+
+
 <div class="container">
-  <app-header></app-header>
+  <div class="header">
+    <app-header></app-header>
+  </div>
   <div class="content">
-    <!-- <div class="nothing">
+<div *ngIf="fav ; then Avail ; else notAvail"></div>
+
+<ng-template  #notAvail>
+    <div class="nothing">
       <div class="nothing-image">
         <img src="/assets/icon_nothing.png">
       </div>
       <div class="nothing-text">
         No Favourites added
       </div>
-    </div> -->
+    </div>
+    </ng-template>
 
-    <div class="city">
+    
+<ng-template #Avail>
+    <div class="city" >
       <div class="no-city">
-        6 City added as favourite
+        {{getFavList.length}} City added as favourite
       </div>
       <div class="remove" (click)="removeFav()">
         Remove All
       </div>
     </div>
 
-    <div class="fav-cities">
-      <div class=fav-city>
-        udupi,karantaka
-      </div>
-      <div class="fav-contents">
-        <div>
-          <img src="/assets/icon_mostly_sunny_small.png" alt="">
-        </div>
-        <div class="fav-temp">
-          31 <span class="fav-deg">&#176;C</span>
-        </div>
-        <div class="fav-weather">
-          Mostly Sunny
-        </div>
-      </div>
-      <div>
-        <mat-icon class="fav-icon">favorite_border</mat-icon>
-      </div>
-    </div>
 
-    <div class="fav-cities">
+    <div class="fav-cities" *ngFor="let data of getFavList">
       <div class=fav-city>
-        udupi,karantaka
+        {{data.name}}
       </div>
       <div class="fav-contents">
-        <div>
+        <div class="fav-img">
           <img src="/assets/icon_mostly_sunny_small.png" alt="">
         </div>
         <div class="fav-temp">
-          31 <span class="fav-deg">&#176;C</span>
+          {{(data.main.temp -273.15).toFixed(0)}}&#176; <span class="fav-deg">C</span>
         </div>
         <div class="fav-weather">
           Mostly Sunny
         </div>
       </div>
       <div>
-        <mat-icon class="fav-icon">favorite_border</mat-icon>
+        <mat-icon class="fav-icon">favorite</mat-icon>
       </div>
     </div>
+  </ng-template>
+  
+  
 
   </div>
 </div>

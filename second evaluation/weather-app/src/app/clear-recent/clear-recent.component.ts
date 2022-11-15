@@ -12,7 +12,7 @@ export class ClearRecentComponent implements OnInit {
   ngOnInit(): void {
   }
   yes() {
-    localStorage.removeItem('FavCities')
+    localStorage.removeItem('recentcity')
     window.location.reload();
   }
 }

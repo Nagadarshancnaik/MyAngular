@@ -12,7 +12,7 @@ export class RemoveFavComponent implements OnInit {
   ngOnInit(): void {
   }
   yes() {
-    localStorage.removeItem('FavCities')
+    localStorage.removeItem('favCity')
     window.location.reload();
   }
 }

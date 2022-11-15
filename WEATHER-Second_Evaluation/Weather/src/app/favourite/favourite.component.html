@@ -47,6 +47,8 @@
       </div>
 
 
+      
+
       <div class="city-added-remove" *ngIf="getFavourite && getFavourite.length>0">
         <div>
           <p class="city-added-text" >{{getFavourite.length}} City added as favourite</p>
@@ -55,6 +57,8 @@
           <p class="city-added-text" (click)="removeFav()">Remove All</p>
         </div>
       </div>
+
+
 
       <div style="overflow-x: auto" *ngFor="let data of getFavourite">
         <table class="main-table">
