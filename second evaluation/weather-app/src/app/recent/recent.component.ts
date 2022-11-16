@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ClearRecentComponent } from '../clear-recent/clear-recent.component';
 
 @Component({
@@ -10,7 +11,7 @@ import { ClearRecentComponent } from '../clear-recent/clear-recent.component';
 export class RecentComponent implements OnInit {
   getRecentList: any;
 fav:any;
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog:MatDialog,private router: Router) { }
 
   ngOnInit(): void {
     this.getRecentList=localStorage.getItem('recentcity')
@@ -22,9 +23,13 @@ fav:any;
     else{
       this.fav=false;
     }
-
+    localStorage.setItem('url',JSON.stringify(this.router.url));
   }
   removeFav(){
     this.dialog.open(ClearRecentComponent);
+}
+navigateToHome(data:any){
+  this.router.navigate(['home']);
+  localStorage.setItem('cityFromApi',JSON.stringify(data));
 }
 }

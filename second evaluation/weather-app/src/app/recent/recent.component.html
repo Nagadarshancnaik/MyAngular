@@ -41,19 +41,19 @@
       </div>
     </div>
 
-    <div class="fav-cities" *ngFor="let data of getRecentList">
+    <div class="fav-cities" *ngFor="let data of getRecentList" (click)="navigateToHome(data)">
       <div class=fav-city>
         {{data.name}}
       </div>
       <div class="fav-contents">
         <div class="fav-img">
-          <img src="/assets/icon_mostly_sunny_small.png" alt="">
+          <img src="http://openweathermap.org/img/wn/{{this.data['weather'][0].icon}}@2x.png" alt="">
         </div>
         <div class="fav-temp">
           {{(data.main.temp -273.15).toFixed(0)}} <span class="fav-deg">&#176;C</span>
         </div>
         <div class="fav-weather">
-          Mostly Sunny
+          {{data['weather']['0'].description|titlecase}}
         </div>
       </div>
       <div>

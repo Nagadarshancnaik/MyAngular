@@ -59,35 +59,36 @@ button:not(:last-child) {
   border-right: none;
 }
 
-button:hover {
+
+.active{
   background-color: white;
   color: #e32843;
-
 }
+.no-active{
+  background:none;
+  color: white;
+}
+
 
 button {
   border: 1px solid #ffffff;
-  color: #ffffff;
-  background-color: transparent;
   padding: 5px;
-  /* padding-right: 50px; */
   cursor: pointer;
   margin-top: 1%;
   
 }
 .but {
-  color: #ffffff;
   font-family: Roboto;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 19px;
   padding-right: 8px;
-  /* padding-top: 10px; */
 }
 
 .temp-button{
   padding-top: 11px;
 }
+
 
 .most-sunny{
  color: #FFFFFF;
@@ -172,7 +173,7 @@ line-height: 25px;
   }
   .fav{
     width:auto;
-    margin-left: 39%;
+    margin-left: 35%;
     padding-top: 20px;
   }
 
@@ -186,7 +187,10 @@ line-height: 25px;
     justify-content: left;
     /* opacity: 0.1; */
   background-color: rgba(255, 255, 255, 0.1);
-  height:21vh;
+  /* padding-inline-start: 10px; */
+  /* padding-inline-end: 10px; */
+
+  /* height:15vh; */
   }
   .temp{
     color: #FFFFFF;
@@ -207,12 +211,24 @@ line-height: 25px;
   .temperature-main{
   padding-top: 8px;
 }
+.foot{
+  width: 100%;
+}
+.abc{
+  width: 100%;
+}
+.footer-text1{
+  width: 100%;
+}
+.footer-text2{
+  width: 100%;
+}
 
 }
 
 @media screen and (max-width:500px){
   .fav{
-  margin-left: 37%;
+  margin-left: 33%;
 }
 
 }
@@ -221,7 +237,7 @@ line-height: 25px;
 @media screen and (max-width:450px){
 
   .fav{
-    margin-left: 36%;
+    margin-left: 31%;
   }
   
 }
@@ -231,14 +247,14 @@ line-height: 25px;
 
 @media screen and (max-width:400px){
   .fav{
-    margin-left: 34%;
+    margin-left: 29%;
   }
   
 } 
 
 @media screen and (max-width:350px){
   .fav{
-    margin-left: 32%;
+    margin-left: 25%;
   }
   
 } 

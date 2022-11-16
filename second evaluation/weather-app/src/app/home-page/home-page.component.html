@@ -3,7 +3,7 @@
   <div class="place">
     <div class="place-name">{{homeCity.name}}</div>
     <div class="fav">
-      <mat-icon class="heart" [ngClass]="color" [innerText]="border" ></mat-icon>
+      <mat-icon class="heart" [ngClass]="color" [innerText]="border" (click)=addToFav() ></mat-icon>
       <div class="add-fav" [ngClass]="color" [innerText]="text" (click)=addToFav()></div>
     </div>
   </div>
@@ -12,19 +12,19 @@
   <div class="middle">
 
     <div class="middle-img">
-      <img src="/assets/icon_mostly_sunny.png" alt="">
+      <img src="http://openweathermap.org/img/wn/{{this.homeCity['weather'][0].icon}}@2x.png" alt="">
     </div>
 
     <div class="temperature-main">
-      <div class="temp" >{{homeCity.main.temp}}</div>
+      <div class="temp" >{{temperature}}</div>
       <div class="temp-button">
-        <button class="but">&#176;C</button>
-        <button class="but">&#176;F</button>
+        <button (click)="cel()" [ngClass]="active" class="but">&#176;C</button>
+        <button (click)="far()" [ngClass]="active1" class="but">&#176;F</button>
       </div>
     </div>
 
     <div class="most-sunny">
-      <!-- {{homeCity.weather.0.description}} -->
+      {{homeCity['weather']['0'].description|titlecase}}
     </div>
 
   </div>
@@ -39,7 +39,7 @@
       </div>
       <div class="abc">
         <div class="footer-text1">Min - Max</div>
-        <div class="footer-text2">{{(homeCity['main'].temp_max -273.15).toFixed(0)}}&#176;-{{(homeCity['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
+        <div class="footer-text2">{{(homeCity['main'].temp_min -273.15).toFixed(0)}}&#176;-{{(homeCity['main'].temp_max -273.15).toFixed(0)}}&#176;</div>
       </div>
     </div>
     <!-- 2 -->

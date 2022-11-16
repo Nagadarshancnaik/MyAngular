@@ -14,5 +14,9 @@ export class WeatherService {
   getApiData(city:any){
     return this.http.get(`${API_URL}/weather?q=${city}&appid=${API_KEY}`);
   }
+  takeIcon(data:any){
+    return data;
+    // alert(data);
+  }
 
 }

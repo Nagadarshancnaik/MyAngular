@@ -4,7 +4,7 @@
       <img src="/assets/logo_web.png" alt="">
     </div>
     <div class="search">
-      <input type="text" placeholder="Search city" id="text-input" #city>
+      <input type="text" placeholder="Search city" id="text-input" #city (keydown)="enterSubmit($event,city.value)">
       <mat-icon class="icon" (click)="searchCity(city.value)">search</mat-icon>
     </div>
   </div>
@@ -17,11 +17,11 @@
 
   <div class="nav-bar-mobile" [class.menuClass]="menuVariable">
     <div class="nav-bar-second-div">
-      <div class="home-mobile" routerLink="/home">HOME</div>
-      <div class="home-mobile" routerLink="/favourite">FAVOURITE</div>
-      <div class="home-mobile" routerLink="/recent">RECENT SEARCH</div>
+      <div class="home-mobile" routerLink='/home'>HOME</div>
+      <div class="home-mobile" routerLink='/favourite'>FAVOURITE</div>
+      <div class="home-mobile" routerLink='/recent'>RECENT SEARCH</div>
     </div>
-  </div>
+  </div>  
 
 
   <div class="navbar">
@@ -34,6 +34,9 @@
     </nav>
     <div class="date">
       {{date|date:'E'}}, {{date|date:'mediumDate'}} &nbsp;&nbsp; {{date|date:'shortTime'}}
+    </div>
+    <div class="date1">
+      {{date|date:'E'|uppercase}}, {{date|date:'mediumDate'|uppercase}} &nbsp;&nbsp; {{date|date:'shortTime'|uppercase}}
     </div>
   </div>
   <div class="line1"></div>
