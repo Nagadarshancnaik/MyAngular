@@ -15,6 +15,10 @@
 @media screen and (max-width:700px) {
   .line{
   width: 90%;
-
+  margin-top: 25px;
+  }
+  .logo img{
+    width: 120px;
+    height: 60px;
   }
 }

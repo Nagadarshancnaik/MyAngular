@@ -2,21 +2,21 @@
 
   <app-header></app-header>
   <app-navbar></app-navbar>
-  <div class="character-content">
-    <div> <span>POOJASHREE SHETTY</span> </div>
-    <div><span>THANUJA</span></div>
-    <div><span>NITHIN</span></div>
-    <div><span>RAHUL</span></div>
+  <div class="character-content" *ngFor="let detail of page1local.results" >
+    <div> <span routerLink='/characterDetails' (click)="character(page1local.results.indexOf(detail))">{{detail.name|uppercase}}</span> </div>
+    <!-- <div><span>NITHIN</span></div>
+    <div><span>DLJV CXFGSFD</span></div>
+    <div><span>LJGIY</span></div>
     <div routerLink='/characterDetails' ><span>NAGADARSHAN C NAIK</span></div>
-    <div> <span>POOJASHREE SHETTY</span> </div>
-    <div><span>THANUJA</span></div>
+    <div> <span>NJHSFJSWDFW</span> </div>
+    <div><span>TANUJA</span></div>
     <div><span>NITHIN</span></div>
     <div><span>RAHUL</span></div>
-    <div><span>NAGADARSHAN C NAIK</span></div>
+    <div><span>NAGADARSHAN C NAIK</span></div> -->
   </div>
   <div class="but">
     <div><button>PREVIOUS</button></div>
-    <div><button>NEXT</button></div>
+    <div><button (click)="next()">NEXT</button></div>
   </div>
   <app-footer></app-footer>
 </div>

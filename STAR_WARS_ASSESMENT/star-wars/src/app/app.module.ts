@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CharacterPageComponent } from './character-page/character-page.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,9 @@ import { CharacterDetailsComponent } from './character-details/character-details
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

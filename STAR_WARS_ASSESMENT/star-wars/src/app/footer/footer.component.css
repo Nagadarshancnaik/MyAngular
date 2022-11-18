@@ -7,15 +7,11 @@ justify-content: space-around;
 align-items: center;
 margin: auto;
 padding-top: 30px;
-/* gap: 20px; */
-/* overflow:hidden; */
-/* flex-wrap: wrap; */
-/* white-space: nowrap; */
-/* overflow:visible; */
+
 }
 .line1{
   border-bottom: 1px solid #2E6E9A;
-  margin-top: 90px;
+  margin-top: 0px;
   opacity: 0.4;
 }
   .footer div{
@@ -29,8 +25,8 @@ padding-top: 30px;
   }
 
   .copywrite{
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
 
     text-align: center;
     color: #49586B;
