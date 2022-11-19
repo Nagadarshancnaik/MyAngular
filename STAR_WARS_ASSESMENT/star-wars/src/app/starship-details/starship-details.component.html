@@ -1,0 +1,37 @@
+<div>
+  <app-header></app-header>
+  <app-navbar></app-navbar>
+  <div class="people-detail-maindiv1">
+    <div class="people-detail-maindiv2">
+      <div class="img-div">
+        <img src="/assets/yodhaaa.jpg" alt="" id="yoda-size" />
+      </div>
+      <div class="detail-div" >
+
+        <h1 class="heading-name">{{starships.name|uppercase}}</h1>
+  
+        <p><span class="designation">MGLT  :  </span><span class="designation-data"> {{starships.MGLT   | titlecase}}</span></p>
+  
+        <p><span class="designation">cargo_capacity :  </span><span class="designation-data">{{starships.cargo_capacity| titlecase}}</span></p>
+  
+        <p><span class="designation">consumables :  </span><span class="designation-data">{{starships.consumables | titlecase}}</span></p>
+  
+        <p><span class="designation">cost_in_credits :  </span><span class="designation-data">{{starships.cost_in_credits | titlecase}}</span></p>
+  
+        <p><span class="designation">crew :  </span><span class="designation-data">{{starships.crew | titlecase}}</span></p>
+  
+        <p><span class="designation">hyperdrive_rating :  </span><span class="designation-data">{{starships.hyperdrive_rating | titlecase}}</span></p>
+        <p><span class="designation">length :  </span><span class="designation-data">{{starships.length | titlecase}}</span></p>
+        <p><span class="designation">manufacturer :  </span><span class="designation-data">{{starships.manufacturer | titlecase}}</span></p>
+        <p><span class="designation">max_atmosphering_speed :  </span><span class="designation-data">{{starships.max_atmosphering_speed | titlecase}}</span></p>
+        <p><span class="designation">model :  </span><span class="designation-data">{{starships.model | titlecase}}</span></p>
+        <p><span class="designation">passengers :  </span><span class="designation-data">{{starships.passengers | titlecase}}</span></p>
+        <p><span class="designation">starship_class :  </span><span class="designation-data">{{starships.starship_class | titlecase}}</span></p>
+
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+  <app-footer></app-footer>
+</div>
+</div>      

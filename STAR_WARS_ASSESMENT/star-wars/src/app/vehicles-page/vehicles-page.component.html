@@ -3,8 +3,8 @@
   <app-header></app-header>
   <app-navbar></app-navbar>
   <div class="main"> 
-  <div class="character-content" *ngFor="let detail of people.results" >
-    <div> <span routerLink='/characterDetails' (click)="character(people.results.indexOf(detail))">{{detail.name|uppercase}}</span> </div>
+  <div class="character-content" *ngFor="let detail of vehicles.results" >
+    <div> <span routerLink='/vehiclesDetails' (click)="character(vehicles.results.indexOf(detail))">{{detail.name|uppercase}}</span> </div>
     <!-- <div><span>NITHIN</span></div>
     <div><span>DLJV CXFGSFD</span></div>
     <div><span>LJGIY</span></div>

@@ -14,17 +14,8 @@ export class HomeComponent implements OnInit {
   text5: boolean=false;
   text6: boolean=false;
 
-  url1 = 'https://swapi.dev/api/people/';
   constructor(public serveice: StarwarsService) { }
-
-
   ngOnInit(): void {
-    this.get(this.url1);
+  }
 
-  }
-  get(url: any) {
-    this.serveice.getapi(url).subscribe(data => {
-      localStorage.setItem('page1', JSON.stringify(data))
-    })
-  }
 }

@@ -1,21 +1,21 @@
 <div class="container">
   <app-header></app-header>
   <div class="home-content">
-    <div routerLink='characterPage' (mouseover)="text1=true" (mouseout)="text1=false">
+    <div routerLink='filmsPage' (mouseover)="text1=true" (mouseout)="text1=false">
       <img src="/assets/films_normal.png" alt="" *ngIf="!text1">
       <img src="/assets/films_pressed.png" alt="" *ngIf="text1">
       <p class="names">FILMS</p>
 
 
     </div>
-    <div routerLink='characterPage' (mouseover)="text2=true" (mouseout)="text2=false">
+    <div routerLink='speciesPage' (mouseover)="text2=true" (mouseout)="text2=false">
       <img src="/assets/species_normal.png" alt="" *ngIf="!text2">
       <img src="/assets/species_pressed.png" alt="" *ngIf="text2">
       <p class="names">SPECIES</p>
     </div>
 
 
-    <div routerLink='characterPage' (mouseover)="text3=true" (mouseout)="text3=false">
+    <div routerLink='planetsPage' (mouseover)="text3=true" (mouseout)="text3=false">
       <img src="/assets/planets_normal.png" alt="" *ngIf="!text3">
      <img src="/assets/planets_pressed.png" alt="" *ngIf="text3">
       <p class="names">PLANETS</p>
@@ -29,13 +29,13 @@
     </div>
 
 
-    <div routerLink='characterPage' (mouseover)="text5=true" (mouseout)="text5=false">
+    <div routerLink='starshipPage' (mouseover)="text5=true" (mouseout)="text5=false">
       <img src="/assets/vehicles_normal.png" alt="" *ngIf="!text5">
       <img src="/assets/vehicles_pressed.png" alt="" *ngIf="text5">
       <p class="names">STARSHIP</p>
     </div>
 
-    <div routerLink='characterPage' (mouseover)="text6=true" (mouseout)="text6=false">
+    <div routerLink='vehiclesPage' (mouseover)="text6=true" (mouseout)="text6=false">
       <img src="/assets/droids_normal.png" alt="" *ngIf="!text6">
       <img src="/assets/droids_pressed.png" alt="" *ngIf="text6">
       <p class="names">VEHICLES</p>

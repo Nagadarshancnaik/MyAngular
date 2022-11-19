@@ -1,0 +1,27 @@
+<div>
+  <app-header></app-header>
+  <app-navbar></app-navbar>
+  <div class="people-detail-maindiv1">
+    <div class="people-detail-maindiv2">
+      <div class="img-div">
+        <img src="/assets/yodhaaa.jpg" alt="" id="yoda-size" />
+      </div>
+      <div class="detail-div" >
+
+        <h1 class="heading-name">{{films.title|uppercase}}</h1>
+  
+        <p><span class="designation">director :  </span><span class="designation-data"> {{films.director | titlecase}}</span></p>
+  
+        <p><span class="designation">producer :  </span><span class="designation-data">{{films.producer| titlecase}}</span></p>
+  
+        <p><span class="designation">release_date :  </span><span class="designation-data">{{films.release_date | titlecase}}</span></p>
+  
+        <p><span class="designation">opening_crawl :  </span><span class="designation-data">{{films.opening_crawl | titlecase}}</span></p>
+  
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+  <app-footer></app-footer>
+</div>
+</div>      

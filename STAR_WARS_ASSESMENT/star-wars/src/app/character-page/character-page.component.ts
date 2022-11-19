@@ -8,22 +8,42 @@ import { StarwarsService } from '../starwars.service';
 })
 export class CharacterPageComponent implements OnInit {
   page1local: any;
+  url = 'https://swapi.dev/api/people/';
+  people: any;
 
   constructor(public serveice: StarwarsService) { }
-// data=[];
+
   ngOnInit(): void {
-    this.page1local=JSON.parse(localStorage.getItem('page1') as any);
-    // this.data=this.page1local;
-    // console.log(this.data);
-    
+    this.get(this.url);
   }
-  next(){
-    this.serveice.getapi(this.page1local.next).subscribe(data=>{
-      this.page1local=data;
+
+  get(url: any) {
+    this.serveice.getCharcterDetailApi(url).subscribe(data => {
+      this.people=data;
+      console.log(this.people);
+      
     })
   }
+
+
+  next(){
+    this.serveice.getCharcterDetailApi(this.people.next).subscribe(data=>{
+      this.people=data;
+    })
+  }
+
+
+
+  prev(){
+    this.serveice.getCharcterDetailApi(this.people.previous).subscribe(data=>{
+      this.people=data;
+    })
+  }
+
+
+
   character(data:any){
-    localStorage.setItem('people',JSON.stringify(this.page1local.results[data]));
+    localStorage.setItem('people',JSON.stringify(this.people.results[data]));
   }
 
 }

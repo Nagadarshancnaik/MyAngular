@@ -6,10 +6,27 @@ import { Injectable } from '@angular/core';
 })
 export class StarwarsService {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  getapi(url:any){
-  return this.http.get(url);
+  getCharcterDetailApi(url: any) {
+    return this.http.get(url);
+  }
+
+  getfilmsDetailApi(url: any) {
+    return this.http.get(url);
+  }
+
+  getspeciesDetailApi(url: any) {
+    return this.http.get(url);
+  }
+  getplanetsDetailApi(url: any) {
+    return this.http.get(url);
+  }
+  getstarshipsDetailApi(url: any) {
+    return this.http.get(url);
+  }
+  getvehiclesDetailApi(url: any) {
+    return this.http.get(url);
   }
 }
 
