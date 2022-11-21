@@ -1,12 +1,13 @@
-.character-content{
+.character-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; 
+  text-align: center;
   padding-top: 10px;
 }
 
-.character-content span{
+
+.character-content span {
   color: white;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -19,59 +20,107 @@
   /* padding-top: 30px; */
 }
 
-.character-content div{
-padding: 8px 0;
-width: 210px;
-margin: auto;
+.character-content div {
+  padding: 8px 0;
+  width: 210px;
+  margin: auto;
 }
-.but{
+
+.but {
   width: 15%;
   margin: auto;
   display: flex;
   /* justify-content: space-between; */
   justify-content: center;
   gap: 20px;
-padding-top:20px;
-padding-bottom:20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
 }
-button{
+
+button {
   /* border: 10px; */
   background: rgb(0, 168, 255, 0.4);
   border: none;
   padding: 10px 10px;
-  width:100px;
+  width: 100px;
   color: white;
   font-family: "Open Sans", sans-serif;
-font-size: 14px;
+  font-size: 14px;
 }
-button:hover,button:hover{
+
+
+.character-content div:hover {
+  /* width: 100px; */
+  /* padding: 8px; */
+  background: rgba(13, 168, 255, 0.4)
+}
+
+.enable {
+
+  background: rgb(0, 168, 255, 0.4);
+
+}
+
+.disable {
 
   background: rgb(0, 168, 255, 0.7);
 
   opacity: 0.4;
-}
-.character-content div:hover{
-  /* width: 100px; */
-  /* padding: 8px; */
-  background:rgba(13,168,255,0.4)
-
 
 }
+
+
 
 @media screen and (max-width:700px) {
-  button{
-  width:85px;
-font-size: 11px;
-  padding: 8px 8px;
+  button {
+    width: 85px;
+    font-size: 11px;
+    padding: 8px 8px;
   }
-  button:hover,button:hover{
-    background: rgb(0, 168, 255, 0.7);
-    opacity: 0.4;
-  }
-.main{
-  margin-top: 15px;
 
-  margin-bottom: 20px;
+
+  .main {
+    margin-top: 15px;
+
+    margin-bottom: 0px;
+    height: 320px;
+    overflow-y: auto;
+  }
+
+  .character-content span {
+    font-size: 24px;
+  }
+
+  .loader {
+
+    left: 44%;
+
+    position: absolute;
+
+    text-align: center;
+
+    top: 35%;
+
+  }
+
+  .loader,
+
+  .loader:after {
+
+    border-radius: 50%;
+
+    width: 5em;
+
+    height: 5em;
+
+  }
 }
+
+@media screen and (min-width:700px) {
+
+  .main {
+    height: 460px;
+  }
+
 }

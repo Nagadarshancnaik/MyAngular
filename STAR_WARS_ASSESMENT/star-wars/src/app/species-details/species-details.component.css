@@ -51,7 +51,7 @@
 
   overflow-y: auto;
 
-  height: 295px;
+  height: 310px;
   line-height: 45px; 
   overflow-x: hidden;
   color: white;
@@ -64,6 +64,8 @@
   justify-content: flex-start;
 
   align-items: center;
+  width: 60%;
+  /* height: 360px; */
 
 }
 
@@ -151,6 +153,8 @@ font-size: 35px;
 
   .detail-div {
     height: 250px;
+  width: 90%;
+
   }
 
   .detail-div::-webkit-scrollbar {
@@ -172,7 +176,11 @@ font-size: 35px;
   padding-top: 0px;
 }
 .detail-div {
-  margin-top: 30px;
+  margin-top: 0px;
+}
+.img-div {
+  width: 100%;
+  height: 400px;
 }
 
 }

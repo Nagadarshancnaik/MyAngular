@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center; 
-  padding-top: 10px;
+  padding-top: 27px;
 }
 
 .character-content span{
@@ -19,8 +19,9 @@
   /* padding-top: 30px; */
 }
 .main{
-  height: 500px;
+  height: 479px;
   margin: auto;
+  padding-top: 60px;
 }
 
 .character-content div{
@@ -61,7 +62,7 @@ button:hover,button:hover{
   background:rgba(13,168,255,0.4)
 }
 .foot{
-  margin-top: 120px;
+  margin-top: 0px;
 }
 
 @media screen and (max-width:700px) {
@@ -75,8 +76,42 @@ font-size: 11px;
     opacity: 0.4;
   }
 .main{
-  margin-top: 15px;
-
+  margin-top: 0px;
+height: 420px;
   margin-bottom: 20px;
+  overflow-y: auto;
+  padding-top: 0px;
+
 }
+.character-content span{
+  font-size: 24px;
+}
+.character-content{
+  padding-top: 10px;
+  
+}
+.loader {
+
+  left: 44%;
+
+  position: absolute;
+
+  text-align: center;
+
+  top: 34%;
+
+}
+
+.loader,
+
+.loader:after {
+
+  border-radius: 50%;
+
+  width: 5em;
+
+  height: 5em;
+
+}
+
 }

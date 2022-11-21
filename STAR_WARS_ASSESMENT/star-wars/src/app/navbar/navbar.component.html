@@ -1,8 +1,9 @@
+{{highlight()}}
 <div class="navbar">
-<div routerLink='/filmsPage'>FILMS</div>
-<div routerLink='/speciesPage'>SPECIES</div>
-<div routerLink='/planetsPage'>PLANETS</div>
-<div routerLink='/characterPage'>CHARACTERS</div>
-<div routerLink='/starshipPage' class="a">STARSHIPS</div>
-<div routerLink='/vehiclesPage'>VEHICLES</div>
+  <div routerLink='/filmsPage' routerLinkActive="active" [ngClass]="filmssactive">FILMS</div>
+  <div routerLink='/speciesPage' routerLinkActive="active" [ngClass]="spiciesactive">SPECIES</div>
+  <div routerLink='/planetsPage' routerLinkActive="active" [ngClass]="plantesactive">PLANETS</div>
+  <div routerLink='/characterPage' routerLinkActive="active" [ngClass]="peopleactive">CHARACTERS</div>
+  <div routerLink='/starshipPage' routerLinkActive="active" [ngClass]="strashipactive">STARSHIPS</div>
+  <div routerLink='/vehiclesPage' routerLinkActive="active" [ngClass]="vehiclesactive">VEHICLES</div>
 </div>

@@ -9,6 +9,7 @@ border-bottom: 1px solid #2E6E9A;
 padding-bottom: 13px; */
 color: white;
 align-items: center;
+cursor: pointer;
 }
 
 .navbar div{
@@ -26,11 +27,17 @@ padding-bottom: 13px;
 
 }
 
-.a{
+/* .a{
   background:rgba(13,168,255,0.45)
-  
-  /* padding-top: 10px; */
+} */
+
+.active{
+background:rgba(13,168,255,0.4);
+
 }
+
+
+
 @media screen and (max-width:700px) {
   .navbar{
     overflow-x: auto;

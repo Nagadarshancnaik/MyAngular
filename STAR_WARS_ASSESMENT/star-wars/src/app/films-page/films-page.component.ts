@@ -10,6 +10,8 @@ export class FilmsPageComponent implements OnInit {
   films: any;
   url = 'https://swapi.dev/api/films/';
 
+  load = true;
+  unload = false;
   constructor(public serveice: StarwarsService) { }
 
   ngOnInit(): void {
@@ -19,6 +21,8 @@ export class FilmsPageComponent implements OnInit {
   get(url: any) {
     this.serveice.getfilmsDetailApi(url).subscribe(data => {
       this.films=data;
+      this.load = false;
+      this.unload = true;
       console.log(this.films);
       
     })

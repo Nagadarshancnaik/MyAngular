@@ -3,9 +3,30 @@
   <app-navbar></app-navbar>
   <div class="people-detail-maindiv1">
     <div class="people-detail-maindiv2">
-      <div class="img-div">
-        <img src="/assets/yodhaaa.jpg" alt="" id="yoda-size" />
+      <div *ngIf="films.title=='A New Hope'"  class="img-div">
+        <img src="/assets/film11.png" alt="" id="yoda-size" />
       </div>
+      <div *ngIf="films.title=='The Empire Strikes Back'"  class="img-div">
+        <img src="/assets/film22.png" alt="" id="yoda-size" />
+      </div>
+      <div *ngIf="films.title=='Return of the Jedi'"  class="img-div">
+        <img src="/assets/film33.png" alt="" id="yoda-size" />
+      </div>
+
+      <div *ngIf="films.title=='The Phantom Menace'"  class="img-div">
+        <img src="/assets/film4.png" alt="" id="yoda-size" />
+      </div>
+
+      <div *ngIf="films.title=='Attack of the Clones'"  class="img-div">
+        <img src="/assets/film5.png" alt="" id="yoda-size" />
+      </div>
+
+      <div *ngIf="films.title=='Revenge of the Sith'"  class="img-div">
+        <img src="/assets/film6.png" alt="" id="yoda-size" />
+      </div>
+
+      
+
       <div class="detail-div" >
 
         <h1 class="heading-name">{{films.title|uppercase}}</h1>
