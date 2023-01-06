@@ -1,0 +1,117 @@
+<div class="mblSearch" id="blur">
+  <div class="mblSearchHeader">
+    <div class="mblimg">
+      <img routerLink="/home" (click)="mblBack()" src="/assets/icn_back_header.png" alt="">
+    </div>
+    <p class="mblSearchHeaderP">Search</p>
+    <div></div>
+  </div>
+
+  <div class="abcd">
+    <div class="inputFilter">
+      <div class="mblinput">
+        <input type="text" placeholder="Search" value={{inputValue}} (click)="searchInput()" #value (keyup)="enterValue($event, value.value)">
+        <div class="mbllimg"><img src="/assets/icn_search-Search.png" alt=""></div>
+      </div>
+      <div (click)="openMobileFilter()">
+        <img src="/assets/filter.png" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="extendSeach">
+
+    <div class="searchSecond">
+      <div class="topSearch" *ngIf="topSearchField">
+        <p class="topP">Top Search</p>
+        <div class="topSearches">
+          <p class="topSearchesP" (click)="onTopSearch(search)" *ngFor="let search of topSearches">{{search}}</p>
+        </div>
+      </div>
+      <div class="noMatch" *ngIf="noMatchField">
+        <div class="noMatchImg">
+          <img src="/assets/img_search no result.png" alt="">
+        </div>
+        <p class="noMatch1">No matching course</p>
+        <p class="noMatch2">Try a different search or browse categories</p>
+      </div>
+
+    </div>
+
+
+    <div class="searchSecond">
+      <div class="catSearch">
+        <p class="catSearchP">Search from Categories</p>
+        <div class="cat1212">
+          <div class="cat1" *ngFor="let cat of categories" (click)="onCategory(cat)">
+            <img src="/assets/pen.png" alt="" width="20" height="20">
+            <p>{{cat}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="searchSecondMain" *ngIf="searchedResult">
+    <div class="searchSecond">
+
+      <div class="result" *ngFor="let result of resultOfCategory" (click)="gotoOverview(result._id)">
+        <div class="resultPhoto">
+          <img src={{result.courseImage}} alt="" width="52" height="52">
+        </div>
+        <div class="resultContent">
+          <p class="resultP1">{{result.courseTitle}}</p>
+          <p class="resultP2">{{result.courseContent.totalChapters}} Chapter</p>
+          <p class="resultP3">{{result.category}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="mm" id="popup" *ngIf="showPopup">
+  <div class="main">
+    <div class="Head">
+      <div class="first"></div>
+      <div class="filter">
+        <p>Search Filters</p>
+      </div>
+      <div class="cross">
+        <mat-icon (click)="openMobileFilter()">close</mat-icon>
+      </div>
+    </div>
+    <div class="content">
+      <div class="catSearch">
+        <p class="catSearchP">Categories</p>
+        <div class="cat1212">
+          <div class="cat1" [class.act]="catt.includes(cat)" *ngFor="let cat of categories; let i=index" (click)="onClick(cat,i)">
+            <img src="/assets/pen.png" alt="" width="20" height="20">
+            <p>{{cat}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="duration">
+        <p class="durationP">Duration</p>
+        <div class="durContent">
+          <p (click)="duration([1,2],0)" [class.act]="durationArray.includes(0)" >5/10 Chapters</p>
+          <p (click)="duration([2,4],1)" [class.act]="durationArray.includes(1)">10/20 Chapters</p>
+          <p (click)="duration([3,6],2)" [class.act]="durationArray.includes(2)">20/30 Chapters</p>
+          <p (click)="duration([10,20],3)" [class.act]="durationArray.includes(3)">30/40 Chapters</p>
+          <p (click)="duration([25],4)" [class.act]="durationArray.includes(4)">50+Chapters</p>
+        </div>
+      </div>
+      <div class="butt">
+        <div class="buttons">
+          <div class="apply" (click)="openMobileFilter()"><button>Apply Filter</button></div>
+          <div class="clear" (click)="clearAll()"><button>Clear All</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

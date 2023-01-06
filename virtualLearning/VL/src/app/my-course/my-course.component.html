@@ -1,0 +1,331 @@
+<div class="head">
+  <app-header></app-header>
+</div>
+<div class="hh">
+  <div class="mblimg">
+    <img src="/assets/img_designcoursedetail1_bg.png" alt="">
+    <div class="mblcross"><img routerLink="/home" src="/assets/icn_close_white.png" alt=""></div>
+    <div class="mblName">
+
+      <div class="mblname1">Learn Figma - UI/UX Design Essential Training</div>
+      <div>
+        <span class="mblDesign">design</span><span class="mblchap">7 Chapters | 46 Lessons</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="main">
+      <div class="path">
+        <span class="my" routerLink="/allOngoingCourse" >My Course</span><span class="arrow"><img src="/assets/Vector (3).png" alt=""></span><span
+          class="my1">Ongoing</span>
+      </div>
+
+      <div class="parts">
+        <div class="part1">
+
+          <div class="vedio-div">
+            <video class="video" [src]="vedio" type="mp4" controls id="my_video_1"></video>
+          </div>
+
+          <div class="heading">
+            <div class="headName">
+              <p class="p1">Learn Figma - UI/UX Design Essential Training</p>
+              <p class="p2">7 Chapter | 46 lessons</p>
+            </div>
+            <div class="type">
+              {{overViewDetails?.courseOverview.category
+              }}
+            </div>
+          </div>
+          <div *ngIf="part1video">
+            <hr class="hr">
+
+            <div class="description1">
+              <p>Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach. Learn how
+                to
+                design a beautiful and engaging mobile app with Figma. Learn-by-doing approach.</p>
+            </div>
+            <div class="description2">
+              <p>Figma is a very powerful application that runs online. There are virtually no platform boundaries when
+                it
+                comes to using figma because you can design within a web browser or using their desktop application made
+                for
+                windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it
+                comes. Figma is a very powerful application that runs online. There are virtually no platform boundaries
+                when it comes to using figma because you can design within a web browser or using their desktop
+                application
+                made for windows and macs...</p>
+            </div>
+          </div>
+        </div>
+        <div class="part2">
+          <div class="navba">
+            <div class="overChap">
+              <p class="mblan1" [ngClass]='act' (click)="over()">Overview</p>
+              <p class="mblan2" [ngClass]='act1' (click)="chap()">Chapters</p>
+            </div>
+          </div>
+
+
+          <div *ngIf="part2Over">
+            <div class="part22">
+              <div class="description22">
+                <p>Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach. Learn
+                  how
+                  to
+                  design a beautiful and engaging mobile app with Figma. Learn-by-doing approach.</p>
+              </div>
+              <div class="mblPrev">Preview this course</div>
+              <img class="mblvideo" src="/assets/Video Space.png" alt="">
+              <div class="mbldescription22">
+                <p>Figma is a very powerful application that runs online. There are virtually no platform boundaries
+                  when
+                  it
+                  comes to using figma because you can design within a web browser or using their desktop application
+                  made
+                  for
+                  windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when
+                  it
+                  comes. Figma is a very powerful application that runs online. There are virtually no platform
+                  boundaries
+                  when it comes to using figma because you can design within a web browser or using their desktop
+                  application
+                  made for windows and macs...</p>
+              </div>
+              <div class="includes">
+                <p class="inP">Course Includes</p>
+                <div class="item">
+                  <div>
+                    <img src="/assets/includes.png" alt="" width="25" height="25">
+                  </div>
+                  <p>3.5 total hours video</p>
+                </div>
+                <div class="item">
+                  <div>
+                    <img src="/assets/file1.png" alt="" width="25" height="25">
+                  </div>
+                  <p>Support Files</p>
+                </div>
+                <div class="item">
+                  <div>
+                    <img src="/assets/file2.png" alt="" width="25" height="25">
+                  </div>
+                  <p>6 Module Test</p>
+                </div>
+                <div class="item">
+                  <div>
+                    <img src="/assets/unlock.png" alt="" width="25" height="25">
+                  </div>
+                  <p>Full lifetime access</p>
+                </div>
+                <div class="item">
+                  <div>
+                    <img src="/assets/network.png" alt="" width="25" height="25">
+                  </div>
+                  <p>Access on mobile, desktop and tv</p>
+                </div>
+                <div class="item">
+                  <div>
+                    <img src="/assets/file3.png" alt="" width="25" height="25">
+                  </div>
+                  <p>Certificate of Completion</p>
+                </div>
+              </div>
+
+              <div class="learn">
+                <p class="learnP">What you'll learn</p>
+
+                <div class="learnItem" *ngFor="let learn of overViewDetails?.courseOverview.overViewId.whatYouWillLearn
+                ">
+                  <div>
+                    <img src="/assets/icn_youlllearn.png" alt="">
+                  </div>
+                  <p>{{learn}}</p>
+                </div>
+
+              </div>
+
+              <div class="ins">
+                <p class="recP">Instructor</p>
+                <div class="instructor">
+                  <div>
+                    <img class="mblinst" src="/assets/img_instructor1 copy@3x 1.png" alt="">
+                  </div>
+                  <div class="cont">
+                    <p class="aa">{{overViewDetails?.courseOverview.overViewId
+                      .instructor.name}}
+                    </p>
+                    <p class="ab">{{overViewDetails?.courseOverview.overViewId
+                      .instructor.designation}}
+                    </p>
+                  </div>
+                </div>
+                <div class="des">
+                  <span>{{ overViewDetails?.courseOverview.overViewId
+                    .instructor.description}}
+                  </span><span *ngIf="showMoreButt" (click)="showMore()" class="show">SHOW MORE</span><span
+                    *ngIf="showLessDetails">
+                    {{ overViewDetails?.courseOverview.overViewId
+                    .instructor.description}}.</span><span *ngIf="showLessBut" class="show" (click)="showLess()">SHOW
+                    LESS</span>
+                </div>
+
+              </div>
+
+            </div>
+            <div *ngIf="join1" class="join">
+              Join Course
+            </div>
+          </div>
+
+
+
+
+          <div *ngIf="part2Chap" class="one">
+            <div class="two">
+              <div class="contentL">
+                <p class="cont1">Course Content</p>
+                <p class="cont2">{{chapterDetails.listOfChapters.courseContent.totalChapters }} Chapter | {{
+                  chapterDetails.listOfChapters.courseContent.totalLessons }} lessons | {{
+                  chapterDetails.listOfChapters.courseContent.totalTests }} Assignment Test | 3.5h
+                  total length</p>
+              </div>
+              <div class="mainchap"
+                *ngFor="let Chapters of chapterDetails.listOfChapters.totalChapters[0].chapters; let i = index">
+                <!-- <div class="chap">
+                <p class="chapP">Chapter 1 - Introduction to the course</p>
+                <span><img src="/assets/Vector (2).png" alt="" width="15" height="15"></span>
+              </div> -->
+                <div class="chap">
+                  <p class="chapP">Chapter {{ Chapters.chapterNumber }} - {{ Chapters.chapterTitle }}</p>
+                  <span><img *ngIf="chapterarray[i]" (click)="plus(i)" src="/assets/Vector (2).png" alt=""> <img
+                      class="minus" *ngIf="!chapterarray[i]" (click)="minus(i)" src="/assets/minus.png" alt=""></span>
+                </div>
+
+
+                <div *ngIf="!chapterarray[i]">
+                  <div class="chapters" *ngFor="let lesson of Chapters.lessons; let index=index">
+                    <div class="chapdiv">
+                      <div class="name">
+                        <div class="dotimg">
+                          <img src="/assets/Group Dot.png" alt="">
+                        </div>
+                        <div class="no">{{lesson.serialNumberOfLesson}}</div>
+                        <div class="nameLen">
+                          <p class="chapdivName">{{lesson.title}}</p>
+                          <p class="chapdivlen">01.38 mins</p>
+                        </div>
+                      </div>
+                      <div class="rPlay">
+                        <img class="redplay" (click)="onClickVideoPaly(lesson.url,i,index)" src="/assets/Red Play.png"
+                          alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div  class="quiz-flexx" *ngIf="Chapters.test">
+                    <div class="tik-chapter">
+                      <img src="/assets/Group Dot.png" alt="">
+                    </div>
+                    <div class="module-chapter">
+                      <img src="./assets/moduletest.png" alt="" />
+                    </div>
+                    <div class="module-dd">
+                      <p class="mod">Module Test 2</p>
+                      <p class="quess">2 mins | 5 Questions</p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="chapters">
+                  <div class="chapdiv">
+                    <div class="name">
+                      <div class="no">20</div>
+                      <div class="nameLen">
+                        <p class="chapdivName">Creating a New Project and
+                          File</p>
+                        <p class="chapdivlen">01.38 mins</p>
+                      </div>
+                    </div>
+                    <div class="rPlay">
+                      <img class="redplay" src="/assets/Red Play.png" alt="" width="35" height="35">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="chapters">
+                  <div class="chapdiv">
+                    <div class="name">
+                      <div class="no">20</div>
+                      <div class="nameLen">
+                        <p class="chapdivName">Creating a New Project and
+                          File</p>
+                        <p class="chapdivlen">01.38 mins</p>
+                      </div>
+                    </div>
+                    <div class="rPlay">
+                      <img class="redplay" src="/assets/Red Play.png" alt="" width="35" height="35">
+                    </div>
+                  </div>
+                </div> -->
+
+
+                  <!-- <div class="chapters">
+                  <div class="chapdiv">
+                    <div class="name">
+                      <div class="no">20</div>
+                      <div class="nameLen">
+                        <p class="chapdivName">Creating a New Project and
+                          File</p>
+                        <p class="chapdivlen">01.38 mins</p>
+                      </div>
+                    </div>
+                    <div class="rPlay">
+                      <img class="greyplay" src="/assets/grey play.png" alt="">
+                    </div>
+                  </div>
+                </div> -->
+
+
+                  <!-- <div class="chapters">
+                  <div class="chapdiv">
+                    <div class="name">
+                      <div class="no">20</div>
+                      <div class="nameLen">
+                        <p class="chapdivName">Creating a New Project and
+                          File</p>
+                        <p class="chapdivlen">01.38 mins</p>
+                      </div>
+                    </div>
+                    <div class="rPlay">
+                      <img class="greyplay" src="/assets/grey play.png" alt="">
+                    </div>
+                  </div>
+                </div> -->
+
+                </div>
+
+
+                <!-- <div class="chap">
+                <p class="chapP">Chapter 1 - Introduction to the course</p>
+                <span><img src="/assets/Vector (2).png" alt="" width="15" height="15"></span>
+              </div>
+              <div class="chap">
+                <p class="chapP">Chapter 1 - Introduction to the course</p>
+                <span><img src="/assets/Vector (2).png" alt="" width="15" height="15"></span>
+              </div>
+              <div class="chap">
+                <p class="chapP">Chapter 1 - Introduction to the course</p>
+                <span><img src="/assets/Vector (2).png" alt="" width="15" height="15"></span>
+              </div> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div *ngIf="join2" class="join1">
+    Join Course
+  </div>
+</div>

@@ -1,0 +1,145 @@
+.main {
+  width: 85%;
+  margin: auto;
+}
+
+.container{
+  /* border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 30px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  /* grid-template-columns: repeat(3, auto); */
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+
+}
+.myCourseP{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Biko';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 30px;
+color: #2BB5F4;
+}
+.onComp{
+  display: flex;
+  column-gap: 30px;
+  font-family: 'Proxima Nova Soft';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height, or 250% */
+
+text-align: center;
+
+color: #FFFFFF;
+margin-bottom: 30px;
+}
+.onComp p{
+  margin: 0px;
+
+border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+}
+.act{
+  background: #042C5C;
+  color: #FFFFFF;
+}
+.no-act{
+  background: white;
+  color: #7A7A7A;;
+
+}
+
+.img {
+  /* width: ; */
+}
+
+.course {
+  position: relative;
+  width: 100%;
+}
+.img img{
+  width: 100%;
+  border-radius: 6px;
+}
+.img {
+  filter: brightness(70%);
+}
+
+.on {
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height, or 150% */
+  color: #FFFFFF;
+}
+
+.content {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+}
+
+.content p {
+  margin-bottom: 0px;
+}
+
+.contentName {
+  margin-bottom: 20px;
+}
+
+.a {
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+
+  /* identical to box height, or 150% */
+
+
+}
+
+.b {
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+
+
+}
+
+.butt button {
+
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  /* line-height: 50px; */
+  /* identical to box height, or 250% */
+  color: #FFFFFF;
+  border: none;
+  background: #EC5D52;
+border-radius: 4px;
+  padding: 4px 7px 4px 7px;
+  cursor: pointer;
+}
+
+.butt {
+  display: flex;
+  align-items: center;
+}

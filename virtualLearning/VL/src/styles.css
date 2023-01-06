@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+}
+html, body { height: 100%; 
+ }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+font-family: Proxima Nova Soft;
+  src: url(/assets/Fonts/ProximaNovaSoft-Regular.otf);
+}
+
+
+@font-face {
+  font-family: Biko;
+    src: url(/assets/Fonts/Biko_Regular.otf);
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }

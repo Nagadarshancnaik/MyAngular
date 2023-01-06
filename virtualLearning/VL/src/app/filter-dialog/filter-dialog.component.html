@@ -1,0 +1,41 @@
+<div class="main">
+  <div class="Head">
+    <div class="first"></div>
+    <div class="filter">
+      <p>Search Filters</p>
+    </div>
+    <div class="cross">
+      <mat-icon [mat-dialog-close]>close</mat-icon>
+    </div>
+  </div>
+  <div class="content">
+    <div class="catSearch">
+      <p class="catSearchP">Search from Categories</p>
+      <div class="cat1212">
+
+        <div class="cat1"  [class.act]="catt.includes(cat)" *ngFor="let cat of categories; let i=index" (click)="onClick(cat,i)" >
+          <img src="/assets/pen.png" alt="" width="20" height="25">
+          <p>{{cat}}</p>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="duration">
+      <p class="durationP">Duration</p>
+      <div class="durContent">
+        <p (click)="duration([1,2],0)" [class.act]="durationArray.includes(0)" >5/10 Chapters</p>
+        <p (click)="duration([2,4],1)" [class.act]="durationArray.includes(1)">10/20 Chapters</p>
+        <p (click)="duration([3,6],2)" [class.act]="durationArray.includes(2)">20/30 Chapters</p>
+        <p (click)="duration([10,20],3)" [class.act]="durationArray.includes(3)">30/40 Chapters</p>
+        <p (click)="duration([25],4)" [class.act]="durationArray.includes(4)">50+Chapters</p>
+      </div>
+    </div>
+    <div class="butt">
+    <div class="buttons">
+      <div class="apply"><button [mat-dialog-close]>Apply Filter</button></div>
+      <div class="clear" (click)="clearAll()"><button>Clear All</button></div>
+    </div>
+  </div>
+  </div>
+</div>

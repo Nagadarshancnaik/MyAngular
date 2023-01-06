@@ -1,0 +1,189 @@
+<div class="mainmain">
+  <div class="apphead">
+    <app-header></app-header>
+  </div>
+  <div class="mobileHead">
+    <app-mobile-header></app-mobile-header>
+  </div>
+
+  <div class="container">
+    <div class="main">
+      <div class="hello">
+        Hello!
+      </div>
+      <div class="name">{{name?.fullName}}</div>
+
+      <div class="pagination">
+        <div class="page-img2" *ngFor="let ban of banners">
+          <div class="imagepage">
+            <img src={{ban.courseImage}} alt="">
+          </div>
+          <p class="cource-name">{{ban.courseTitle}}</p>
+        </div>
+
+      </div>
+   
+
+
+      <div class="dots">
+        <div class="dot1" [ngClass]="a1" (click)="dot1()"></div>
+        <div class="dot2" [ngClass]="a2" (click)="dot2()"></div>
+        <div class="dot3" [ngClass]="a3" (click)="dot3()"></div>
+        <!-- <div class="third-dot"></div> -->
+      </div>
+      <div class="onGoing">
+        <div class="head">
+          <div class="on">Ongoing courses</div>
+          <div class="all" routerLink="/allOngoingCourse" >See All</div>
+        </div>
+        <div class="onCource">
+          <div class="page-img1" *ngFor="let on of ongoing" >
+            <div class="imageon">
+            <img src="{{on.url}}" alt="">
+          </div>
+            <div class="content">
+              <div>
+                <p class="a">{{on.title}}</p>
+                <p class="b">{{on.chaptersCompleted}}/{{on.totalChapters}}</p>
+              </div>
+              <div class="butt">
+                <button (click)="goToOverview(on.courseId)" >Continue</button>
+              </div>
+            </div>
+          </div>
+
+ 
+
+        </div>
+      </div>
+
+      <div class="Categories">
+        <div class="head">
+          <div class="on">Categories</div>
+          <div class="all">See All</div>
+        </div>
+        <div class="catTypes">
+          <div class="cat1" *ngFor="let cat of categories">
+            <img src="/assets/pen.png" alt="" width="20" height="20">
+            <p>{{cat}}</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="choose">
+        <div class="head">
+          <div class="on">Choice your course</div>
+          <div class="all">See All</div>
+        </div>
+        <div class="Choice">
+          <div class="aa" (click)="all('All')" [ngClass]="act1">All</div>
+          <div class="aa" (click)="popular('Popular')" [ngClass]="act2">Popular</div>
+          <div class="aa" (click)="newest('Newest')" [ngClass]="act3">Newest</div>
+        </div>
+
+        <div class="choiceCource">
+          <div class="abc" *ngFor="let course of couseTypeDetails" (click)="goToOverview(course._id)">
+            <div class="page-img">
+              <div class="image1">
+                <img src={{course.courseImage}} alt="">
+              </div>
+              <p class="market">{{course.category}}</p>
+            </div>
+
+            <div class="aaa">
+              <p>{{course.courseTitle}}</p>
+              <span>{{course.courseContent.totalChapters}} Chapters</span>
+            </div>
+          </div>
+
+
+     
+
+
+        </div>
+
+      </div>
+
+      <div class="choose">
+        <div class="head">
+          <div class="on">Top courses in Business</div>
+          <div class="all">See All</div>
+        </div>
+
+
+        <div class="choiceCource">
+          <div class="abc" *ngFor="let business of topBusiness">
+            <div class="page-img">
+              <div class="imgdiv">
+              <img src={{business.courseImage}} alt="">
+            </div>
+            </div>
+            <div class="aaa">
+              <p>{{business.courseTitle}}</p>
+              {{lessonDuration(business.courseContent.totalDuration)}}
+              <div class="chapTime">
+                <div>
+                  <p>{{business.courseContent.totalChapters}} Chapters</p>
+                </div>
+                <div class="timerOnly">
+                  <p><img src="/assets/clock.png" alt=""></p>
+                  <p>{{duaration1}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+     
+
+
+        </div>
+
+      </div>
+
+
+      <div class="choose">
+        <div class="head">
+          <div class="on">Top courses in Design</div>
+          <div class="all">See All</div>
+        </div>
+
+        <div class="choiceCource">
+
+          <div class="abc" *ngFor="let desing of topDesign">
+            <div class="page-img">
+              <div class="imgdiv1">
+              <img src={{desing.courseImage}} alt="">
+            </div>
+            </div>
+            <div class="aaa">
+              <p>{{desing.courseTitle}}</p>
+              {{lessonDuration(desing.courseContent.totalDuration)}}
+              <div class="chapTime">
+                <div>
+                  <p>{{desing.courseContent.totalChapters}} Chapters</p>
+                </div>
+                <div class="timerOnly">
+                  <p><img src="/assets/clock.png" alt=""></p>
+                  <p>{{duaration1}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
+
+
+
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</div>

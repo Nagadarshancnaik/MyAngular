@@ -1,0 +1,103 @@
+<div class="headMain">
+
+  <div class="header">
+
+
+    <div routerLink="/home" class="logo">
+      <img src="/assets/Group 118.png" alt="">
+    </div>
+
+
+
+    <div class="ss">
+      <div class="search1">
+        <div *ngIf="showleftIcon" class="afterClick">
+          <mat-icon >search</mat-icon>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search" value={{inputValue}} (click)="searchInput()" #value
+            (keyup)="enterValue($event, value.value)">
+        </div>
+        <div *ngIf="showIcon" class="beforeClick">
+          <mat-icon>search</mat-icon>
+        </div>
+      </div>
+      <div *ngIf="showFilter" (click)="openFilter()"><img class="filter" src="/assets/icn_filter_search.png" alt="">
+      </div>
+    </div>
+
+
+    <div *ngIf="showSetting" class="settings">
+      <div class="img1">
+        <img src="/assets/Bell@2x.png" alt="">
+      </div>
+      <div class="img1">
+        <img src="/assets/Gear.png" alt="">
+      </div>
+      <div class="img2">
+        <img src="/assets/Mask Group.png" alt="">
+      </div>
+    </div>
+
+    <div class="crossIcon" *ngIf="showCross" (click)="onCross()"><img src="/assets/X.png" alt=""></div>
+
+  </div>
+
+</div>
+
+<div class="parent">
+  <div *ngIf="extendSeach" class="searching">
+
+    <div class="searchSecond">
+      <div class="topSearch" *ngIf="topSearchField">
+        <p class="topP">Top Search</p>
+        <div class="topSearches">
+          <p class="topSearchesP" (click)="onTopSearch(search)" *ngFor="let search of topSearches">{{search}}</p>
+        </div>
+      </div>
+
+      <div class="noMatch" *ngIf="noMatchField">
+        <p class="noMatch1">No matching course</p>
+        <p class="noMatch2">Try a different search or browse categories</p>
+      </div>
+    </div>
+
+
+    <div class="searchSecond">
+      <div class="catSearch">
+        <p class="catSearchP">Search from Categories</p>
+        <div class="cat1212">
+          <div class="cat1" *ngFor="let cat of categories" (click)="onCategory(cat)">
+            <img src="/assets/pen.png" alt="" width="20" height="25">
+            <p>{{cat}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="searchedResult" class="searching">
+  <div class="searchSecond">
+
+    <div *ngFor="let result of resultOfCategory">
+      <div class="result" (click)="gotoOverview(result._id)">
+        <div class="resultPhoto">
+          <img src={{result.courseImage}} alt="" width="100" height="20">
+        </div>
+        <div class="resultContent">
+          <p class="resultP1">{{result.courseTitle}}</p>
+          <p class="resultP2">{{result.courseContent.totalChapters}} Chapter</p>
+          <p class="resultP3">{{result.category}}</p>
+        </div><br>
+      </div>
+      <div class="hr">
+        <hr>
+      </div>
+    </div>
+
+
+  </div>
+</div>

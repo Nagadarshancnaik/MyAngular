@@ -1,0 +1,79 @@
+<div>
+  <div class="main">
+    <div class="left-side">
+      <div class="left-side-inside">
+        <div class="image-div">
+          <img src="/assets/img_onboarding_illustration3.png" alt="" />
+        </div>
+
+        <div class="seamless">Seamless Workflow</div>
+
+        <div class="sync">
+          Sync rosters, create and assign impactful video experiences, enrich
+          your flipped classroom, and streamline tedious grading.
+        </div>
+
+        <div class="dots-div">
+          <div class="first-dot"></div>
+          <div class="second-dot"></div>
+          <div class="third-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="right-side-inside">
+        <div class="logo-main-div" routerLink="/home">
+          <img src="/assets/img_virtuallearn logo_splash 2.png" alt="" />
+        </div>
+
+        <div class="welcome-back">Welcome Back!</div>
+        <div class="easy-to-learn">Easy to learn anytime and anywhere.</div>
+        <div class="easy-to-learn-two">Login to your account</div>
+        <div class="easy-to-learn-for-mobile">Easy to learn anytime and anywhere. Login to your account</div>
+        <div class="face-google-login">
+          <button class="face-div">
+            <img src="/assets/facebook.png" alt="" />
+          </button>
+          <button class="google-div">
+            <img src="/assets/google.png" alt="" />
+          </button>
+        </div>
+        <div class="forms-div">
+         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="usrname-input">
+              <mat-label class="username">Username</mat-label>
+              <input type="email" matInput formControlName="username" />
+            </mat-form-field>
+            <!-- <span class="errormessage">
+              <div
+                id="red"
+                *ngIf="login.get('username')?.errors?.['required'] && (login.get('username')?.touched || login.get('username')?.dirty)"
+              >
+                Name is required
+              </div>
+            </span> -->
+
+            <mat-form-field class="usrname-input">
+              <mat-label class="username">Enter your password</mat-label>
+              <input type="email" matInput formControlName="password" />
+            </mat-form-field>
+            <!-- <span class="errormessage">
+              <div
+                id="red"
+                *ngIf="login.get('password')?.errors?.['required'] && (login.get('password')?.touched || login.get('password')?.dirty)"
+              >
+                password is required
+              </div>
+            </span> -->
+            <div class="forgot-pass">Forgot Password?</div>
+            <div class="continue-div">
+              <input class="continue-button" type="submit" value="Continue"/>
+            </div>
+          </form>
+        </div>
+        <div id="reg">Don't have a account? <span>Register</span></div>
+      </div>
+    </div>
+  </div>
+</div>

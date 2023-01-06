@@ -1,0 +1,357 @@
+.main {
+  margin: auto;
+  /* width: 80%; */
+  min-width: 780px;
+  max-width: 1120px;
+  height: 625px;
+  padding-top: 130px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+.forgot-pass {
+  display: block;
+}
+.left-side {
+  /* border: 1px solid red; */
+  width: 60%;
+  margin-top: 50px;
+}
+.image-div {
+  width: 420px;
+}
+.image-div img {
+  width: 420px;
+}
+.seamless {
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 35px;
+  text-align: center;
+  color: #2b2b2b;
+  margin-top: 16px;
+}
+textarea:focus,
+input:focus {
+  color: white;
+  font-size: 16px;
+}
+
+#red {
+  color: red;
+  margin-left: 0px;
+  font-size: 13px;
+}
+
+input,
+select,
+textarea {
+  color: white;
+  font-size: 16px;
+}
+.sync {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #7a7a7a;
+  padding-top: 26px;
+  width: 350px;
+  margin: auto;
+}
+.first-dot,
+.second-dot {
+  width: 8px;
+  height: 8px;
+  background: #d8d8d8;
+  border-radius: 10px;
+}
+
+.third-dot {
+  width: 32px;
+  height: 5px;
+  background-color: #ee5c4d;
+  border-radius: 40px;
+  margin-top: 2px;
+}
+.dots-div {
+  width: 13%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+.left-side-inside {
+  /* border: 1px solid red; */
+
+  width: 450px;
+  margin: auto;
+}
+
+.right-side {
+  /* border: 1px solid red; */
+
+  background-color: #092963;
+  width: 389px;
+}
+.right-side-inside {
+  /* border: 1px solid red; */
+
+  width: 75%;
+  margin: auto;
+}
+.logo-main-div {
+  text-align: center;
+  margin-top: 30px;
+}
+::ng-deep .mat-form-field-underline {
+  background: #ffffff !important;
+  mix-blend-mode: normal !important;
+  opacity: 0.4 !important;
+}
+#vector-img-small {
+  position: absolute;
+  top: 39%;
+  right: 47.5%;
+}
+.virtual-learn-div {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.welcome-back {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 28px;
+}
+.easy-to-learn,
+.easy-to-learn-two {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.6;
+}
+.easy-to-learn {
+  margin-top: 20px;
+}
+.easy-to-learn-for-mobile {
+  display: none;
+}
+.face-google-login {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+}
+
+.face-div,
+.google-div {
+  width: 45%;
+  background-color: #ffffff;
+  height: 49px;
+  border-radius: 6px;
+  border: none;
+}
+.continue-div {
+  margin-top: 15px;
+}
+.google-div img {
+  width: 21%;
+}
+
+.forms-div {
+  margin-top: 20px;
+}
+.usrname-input {
+  width: 100%;
+}
+
+.username {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+  color: #617fb6;
+}
+
+#reg {
+  color: white;
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+
+  text-align: center;
+
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+#reg span {
+  color: #ee5c4d;
+}
+.continue-button {
+  width: 100%;
+  height: 47px;
+  background: #ee5c4d;
+  border-radius: 6px;
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+}
+.forgot-pass {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .main {
+    min-width: 685px;
+    max-width: 1120px;
+    height: 625px;
+    padding-top: 130px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #reg {
+    color: white;
+    font-family: "Proxima Nova Soft";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    /* line-height: 26px; */
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .left-side {
+      display: none;
+    }
+    .right-side {
+      width: 100%;
+    }
+    .right-side-inside {
+      width: 90%;
+    }
+    .main {
+      margin: auto;
+      min-width: 300px;
+      max-width: 700px;
+      height: auto;
+      min-height: 883px;
+      padding-top: 0px;
+      display: flex;
+      justify-content: space-between;
+      /* border: 1px solid red; */
+    }
+    .logo-main-div {
+      margin-top: 80px;
+    }
+    .face-google-login {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+    .easy-to-learn {
+      margin-top: 46px;
+    }
+    .continue-button {
+      margin-top: 50px;
+    }
+    #reg {
+      margin-top: 40px;
+    }
+    .usrname-input {
+      margin-top: 20px;
+    }
+    .google-div img {
+      width: 30px;
+    }
+    .logo-main-div {
+      display: none;
+    }
+    .right-side {
+      /* border: 1px solid red; */
+      background-color: white;
+      /* background-color: rgb(240, 100, 100); */
+    }
+    .welcome-back {
+      padding-top: 90px;
+      text-align: left;
+      color: black;
+      margin-top: 28px;
+    }
+    .easy-to-learn,
+    .easy-to-learn-two {
+      /* text-align: left; */
+      display: none;
+    }
+    .easy-to-learn-for-mobile {
+      display: block;
+      font-family: "Proxima Nova Soft";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: left;
+      color: #7a7a7a;
+      opacity: 0.6;
+      margin-top: 58px;
+    }
+    .face-div,
+    .google-div {
+      width: 45%;
+      background-color: #ffffff;
+      height: 49px;
+      border-radius: 6px;
+      border: none;
+      border: 1px solid rgba(119, 134, 158, 0.3);
+      margin-top: 30px;
+    }
+
+    .forgot-pass {
+      height: 17px;
+      width: 118px;
+      color: #ee5c4d;
+      font-family: 'Proxima Nova Soft';
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.29px;
+      line-height: 17px;
+      text-align: right;
+      width: 100%;
+      margin-top: 30px;
+      display: block;
+    }
+    ::ng-deep .mat-form-field-underline {
+      background: rgba(28, 29, 29, 0.3) !important;
+      mix-blend-mode: normal !important;
+      opacity: 0.4 !important;
+    }
+    #reg {
+      color: #7a7a7a;
+      margin-top: 70px;
+    }
+  }
+}

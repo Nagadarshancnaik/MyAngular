@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="main">
+  <div class="myCourseP">
+    <p>My Course</p>
+  </div>
+
+  <div class="onComp">
+    <p [ngClass]="act1" (click)="ongoing()">Ongoing</p>
+    <p [ngClass]="act2" (click)="completed()">Completed</p>
+  </div>
+<div class="container">
+  <div class="onGoingmain" *ngFor="let course of allOngoingCourse">
+    <div class="course">
+      <div class="img">
+        <img src="/assets/Bitmap (3).png" alt="">
+      </div>
+      <p class="on">Ongoing</p>
+      <div class="content">
+        <div class="contentName">
+          <p class="a">{{course.title}}</p>
+          <p class="b">{{course.chaptersCompleted}}/{{course.totalChapters}} Chapters</p>
+        </div>
+        <div class="butt">
+          <button (click)="goToOverview(course.courseId)">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
+  
+</div>
